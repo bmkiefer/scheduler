@@ -6,12 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user_t = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
-    	  {:title => 'The Terminator', :rating => 'R', :release_date => '26-Oct-1984'},
-    	  {:title => 'When Harry Met Sally', :rating => 'R', :release_date => '21-Jul-1989'},
-      	  {:title => 'The Help', :rating => 'PG-13', :release_date => '10-Aug-2011'},
-      	  {:title => 'Chocolat', :rating => 'PG-13', :release_date => '5-Jan-2001'},
-	 ]
+user_t = [
+	  {:username => 'msk098', :email => 'mist@gmail.com', :first_name => 'Marcus', :last_name => 'Scott', :password => 'yeahmaybe', :total_score => 8, :level_one_flag => 0, :role => 'admin'},
+          {:username => 'msk098', :email => 'mist@gmail.com', :first_name => 'Marcus', :last_name => 'Scott', :password => 'yeahmaybe', :total_score => 8, :level_one_flag => 0, :role => 'admin'},
+          {:username => 'msk098', :email => 'mist@gmail.com', :first_name => 'Marcus', :last_name => 'Scott', :password => 'yeahmaybe', :total_score => 8, :level_one_flag => 0, :role => 'admin'},
+          {:username => 'msk098', :email => 'mist@gmail.com', :first_name => 'Marcus', :last_name => 'Scott', :password => 'yeahmaybe', :total_score => 8, :level_one_flag => 0, :role => 'admin'},
+          {:username => 'msk098', :email => 'mist@gmail.com', :first_name => 'Marcus', :last_name => 'Scott', :password => 'yeahmaybe', :total_score => 8, :level_one_flag => 0, :role => 'admin'},
+          
+          ]
 
 user_t.each do |user|
   User.create!(user)
