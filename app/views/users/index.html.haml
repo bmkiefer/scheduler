@@ -11,6 +11,7 @@
       %th Password
       %th Total Score
       %th Level One Flag
+      %th Role
       %th Details
   %tbody
     - @users.each do |user|
@@ -22,6 +23,7 @@
         %td= user.password
         %td= user.total_score
         %td= user.level_one_flag
+        %td= user.role
         %td= link_to "More about #{user.username}", user_path(user)
 
 = link_to 'Add new user', new_user_path

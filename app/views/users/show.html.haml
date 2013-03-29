@@ -21,7 +21,10 @@
   %li
     Level One Flag:
     = @user.level_one_flag
+  %li
+    Role:
+    = @user.role
 
 = link_to 'Edit', edit_user_path(@user)
 = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to movie list', users_path
+= link_to 'Back to user list', users_path

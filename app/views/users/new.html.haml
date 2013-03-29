@@ -23,4 +23,7 @@
   = label :user, :level_one_flag, 'Level One Flag'
   = text_field :user, 'level_one_flag'
 
+  = label :user, :role,'Role'
+  = select :user, :role, ['admin','user']
+
   = submit_tag 'Save Changes'
