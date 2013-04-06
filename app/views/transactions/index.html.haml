@@ -1,0 +1,29 @@
+-#  This file is app/views/movies/index.html.haml
+%h1 All Users
+
+%table#users
+  %thead
+    %tr
+      %th Username
+      %th Email
+      %th First Name
+      %th Last Name
+      %th Password
+      %th Total Score
+      %th Level One Flag
+      %th Role
+      %th Details
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.username 
+        %td= user.email
+        %td= user.first_name
+        %td= user.last_name
+        %td= user.password
+        %td= user.total_score
+        %td= user.level_one_flag
+        %td= user.role
+        %td= link_to "More about #{user.username}", user_path(user)
+
+= link_to 'Add new user', new_user_path
