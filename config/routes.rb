@@ -1,11 +1,11 @@
 Rottenpotatoes::Application.routes.draw do
 
-  match '/home' => 'pages#home'
-  match '/signin' => 'pages#signin'
+  resources :users
+  resources :sessions, only: [:new,:create,:destory]
 
-  resources :users do
-    resources :levels
-  end
-  # map '/' to be a redirect to '/users'
-  root :to => redirect('/users')
+  match '/home' => 'pages#home'
+  match '/signin' => 'sessions#new'
+  match '/signout' => 'sessions#destroy', via: :delete  
+  # map '/' to be a redirect to '/home'
+  root :to => redirect('/home')
 end
