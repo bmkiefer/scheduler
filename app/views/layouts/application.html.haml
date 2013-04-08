@@ -17,7 +17,11 @@
         #error.message= flash[:error]
 
       = link_to "Home", home_path, :method => :get
-      = link_to "Sign-In", signin_path, :method => :get
-      = link_to "Sign-Up", signup_path, :method => :get
+      - if !signed_in?
+        = link_to "\tSign Out", signout_path, :method => :delete
+      - else
+        = link_to "\tSign-In", signin_path, :method => :get
+        = link_to "\tSign-Up", signup_path, :method => :get
+      
 
       = yield

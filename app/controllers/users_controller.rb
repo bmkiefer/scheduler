@@ -15,9 +15,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(params[:user])
-    flash[:notice] = "#{@user.username} was successfully added."
-    redirect_to users_path
+    @user = User.new(params[:user])
+    if @user.save
+      sign_in @user
+      flash[:notice] = "#{@user.username}, Welcome to Technology Education"
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
   def edit
