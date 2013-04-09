@@ -6,7 +6,7 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
-  %body
+  %head
     %h1.title Technology Education!
     #main
       - if flash[:notice]
@@ -17,7 +17,7 @@
         #error.message= flash[:error]
 
       = link_to "Home", home_path, :method => :get
-      - if !signed_in?
+      - if signed_in?
         = link_to "\tSign Out", signout_path, :method => :delete
       - else
         = link_to "\tSign-In", signin_path, :method => :get
@@ -25,3 +25,4 @@
       
 
       = yield
+

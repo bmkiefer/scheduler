@@ -1,30 +1,100 @@
 -# in app/views/movies/show.html.haml
+!!! 5
+%html
+  %head
+    %title Technology Education!
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
 
-%h2 Details about user #{@user.username}
+    %style{ :type => "text/css" }
+      :sass
+        $left_col_width: 170px
+        $right_col_width: 170px
 
-%ul#attributes
-  %li
-    Email:
-    = @user.email
-  %li
-    First Name:
-    = @user.first_name
-  %li
-    Last Name:
-    = @user.last_name
-  %li
-    Password:
-    = @user.password
-  %li
-    Total Score:
-    = @user.total_score
-  %li
-    Level One Flag:
-    = @user.level_one_flag
-  %li
-    Role:
-    = @user.role
+        $padding: 15px
 
-= link_to 'Edit', edit_user_path(@user)
-= button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to user list', users_path
+        #colmask.three-column
+          position: relative
+          clear: both
+          float: left
+          width: 100%
+          overflow: hidden
+        #colmid
+          float: left
+          width: 200%
+          position: relative
+          left: ($left_col_width + $padding + $padding)
+        #colright
+          float: left
+          width: 100%
+          position: relative
+          left: 50%
+          margin-left: -1 * ($left_col_width + $padding + $padding + $right_col_width + $padding + $padding)
+        #col1wrap
+          float: right
+          width: 50%
+          position: relative
+          right: 100%
+        #col1pad
+          margin: 0 $padding 0 ($left_col_width + $padding + $padding + $right_col_width + $padding + $padding)
+          overflow: hidden
+        #col1
+          width: 100%
+          overflow: hidden
+        #col2
+          float: left
+          width: $left_col_width
+          position: relative
+          margin-left: -50%
+          left: 215px
+          overflow: hidden
+        #col3
+          float: left
+          width: $right_col_width
+          position: relative
+          left: 15px
+          overflow: hidden
+
+  #header
+    #colmask.three-column
+      #colmid
+        #colright
+          #col1wrap
+            #col1pad
+              #col1
+                
+                %h2 Details about user #{@user.username}
+
+                %ul#attributes
+                  %li
+                    Email:
+                    = @user.email
+                  %li
+                    First Name:
+                    = @user.first_name
+                  %li
+                    Last Name:
+                    = @user.last_name
+                  %li
+                    Password:
+                    = @user.password
+                  %li
+                    Total Score:
+                    = @user.total_score
+                  %li
+                    Level One Flag:
+                    = @user.level_one_flag
+                  %li
+                    Role:
+                    = @user.role
+
+
+          #col2
+            bran
+          #col3
+            jon
+      #footer
+        = link_to 'Edit', edit_user_path(@user)
+        = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
+        = link_to 'Back to user list', users_path
