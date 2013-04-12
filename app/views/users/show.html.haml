@@ -100,11 +100,14 @@
                   %th User
                   %th Score
               %tbody
+                - i = 0
                 - @users_all.each do |user|
+                  - i += 1
                   %tr
-                    %td= user.id
+                    %td= i
                     %td= user.username
                     %td= user.total_score
+                    
       #footer
         = link_to 'Edit', edit_user_path(@user)
         = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
