@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     id = params[:id] # retrieve movie ID from URI route
     @user = User.find(id) # look up movie by unique ID
-    @users_all = User.all
+    @users_all = User.order("total_score DESC")
     # will render app/views/movies/show.<extension> by default
   end
 
