@@ -19,8 +19,7 @@
       = link_to "Home", home_path, :method => :get
       - if signed_in?
         = link_to "Sign Out", signout_path, :method => :delete
-        = link_to "Profile", user_path(current_user), :method => :get
-        = link_to "Mission Feedback", feedback_path, :method => :get    
+        = link_to "Profile", user_path(current_user), :method => :get    
         %h2
           Current User
           = current_user.username
