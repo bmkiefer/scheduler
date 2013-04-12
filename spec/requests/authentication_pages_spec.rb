@@ -1,5 +1,5 @@
 describe "Authentication" do
-
+  
   subject { page }
 
   describe "signin" do
@@ -7,21 +7,30 @@ describe "Authentication" do
 
     describe "with invalid information" do
       before { click_link "Sign-In" }
-
-      it { should have_selector('title', text: 'Sign-in') }
-      it { should have_selector('div.alert.alert-error', text: 'Invalid') }
+      it { should have_link('Sign-In', href: signin_path) }
+     it { should have_error_message("Invalid username/password combination") }
+      it { should_not have_link('Sign-Out') }
     end
 
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
       before do
-        fill_in "Username", with: user.username.downcase
-        fill_in "Password", with: user.password
-        click_button "Sign-In"
+        fill_in "Username",:with => user.username
+        fill_in "Password", :with => user.password
+        click_link "Sign-In"
       end 
-
-      it { should have_selector('title', text: user.name) }
-      it { should have_selector('a', 'Sign-Out', href: signout_path) }
+     it { should have_selector("title", :content => user.username) }
+     it { should have_selector("body", :content => user.password) }
+     #it { should have_link('Sign-Out') }
+      
     end
+  end
+end
+FactoryGirl.define do
+  factory :user do
+    username 'Connie Customer'
+    email 'hotdam@bitchesloveme.com'
+    password 'hosahfosaihgo'
+    password_confirmation 'hosahfosaihgo'
   end
 end

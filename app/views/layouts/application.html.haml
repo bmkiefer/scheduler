@@ -16,7 +16,7 @@
       - elsif flash[:error]
         #error.message= flash[:error]
 
-      = link_to "Home", home_path, :method => :get, :id => "Home"
+        = link_to "Home", home_path, :method => :get, :id => "Home"
       - if signed_in?
         = link_to "Sign-Out", signout_path, :method => :delete, :id => "Sign-Out"
         = link_to "Profile", user_path(current_user), :method => :get, :id => "Profile"
