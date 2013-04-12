@@ -17,11 +17,11 @@
   = label :user, :password, 'Password'
   = text_field :user, 'password'
 
+  = label :user, :password_confirmation, 'password_confirmation'
+  = text_field :user, 'password_confirmation'
+
   = label :user, :total_score, 'Total Score'
   = text_field :user, 'total_score'
-
-  = label :user, :level_one_flag, 'Level One Flag'
-  = text_field :user, 'level_one_flag'
 
   = label :user, :role,'Role'
   = select :user, :role, ['admin','user']

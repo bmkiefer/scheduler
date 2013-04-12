@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
+gem 'bcrypt-ruby','3.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -16,7 +17,8 @@ group :development, :test do
   gem 'simplecov'
 end
 group :test do
-  gem 'cucumber-rails'
+  gem "factory_girl_rails", "~> 3.0"
+  gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
 end
 group :production do

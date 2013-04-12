@@ -5,9 +5,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :first_name
       t.string :last_name
-      t.string :password
+      t.string :password_digest
       t.integer :total_score
-      t.integer :level_one_flag
       t.string :role
       t.timestamps
     end
