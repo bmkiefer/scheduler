@@ -8,6 +8,6 @@ end
 
 RSpec::Matchers.define :have_error_message do |message|
   match do |page|
-    Capybara.page.should have_selector('div.alert.alert-error', text: message)
+    page.body.include? message 
   end
 end

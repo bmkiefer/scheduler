@@ -8,7 +8,7 @@ describe "Authentication" do
     describe "with invalid information" do
       before { click_link "Sign-In" }
       it { should have_link('Sign-In', href: signin_path) }
-     it { should have_error_message("Invalid username/password combination") }
+     it { should have_error_message("Invalid username/password") }
       it { should_not have_link('Sign-Out') }
     end
 
