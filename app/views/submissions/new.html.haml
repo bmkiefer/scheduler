@@ -1,0 +1,21 @@
+%div
+= button_to 'Submit Feedback', home_path
+%div
+  MISSION NAME HERE
+%div 
+  Rate:
+  %select
+    %option 1
+    %option 2
+    %option 3
+    %option 4
+    %option 5
+
+%div
+  %textarea{:cols => "50", :name => "comments", :rows => "5"}
+    :preserve
+      
+      Enter your comments here...
+  %br
+ 
+

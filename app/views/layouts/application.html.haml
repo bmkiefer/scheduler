@@ -18,8 +18,14 @@
 
       = link_to "Home", home_path, :method => :get, :id => "Home"
       - if signed_in?
+<<<<<<< HEAD
         = link_to "Sign-Out", signout_path, :method => :delete, :id => "Sign-Out"
         = link_to "Profile", user_path(current_user), :method => :get, :id => "Profile"   
+=======
+        = link_to "Sign Out", signout_path, :method => :delete
+        = link_to "Profile", user_path(current_user), :method => :get
+        = link_to "Mission Feedback", feedback_path, :method => :get    
+>>>>>>> 1e611680f3c7d4aff16b1eb76fedbce5e6d6a3e0
         %h2
           Current User
           = current_user.username
