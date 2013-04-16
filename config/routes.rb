@@ -1,6 +1,9 @@
 Rottenpotatoes::Application.routes.draw do
 
-  resources :users
+  resources :users do
+    resources :levels
+  end
+
   resources :sessions, only: [:new,:create,:destory]
 
   match '/home' => 'pages#home'
