@@ -1,7 +1,7 @@
 Feature: Leaderboard  
   As a teacher
-  So that I can see the rankings of my fellow teachers
-  I want to see a leaderboard of the rankings of all of the teachers
+  So that they can see the rankings of their fellow teachers
+  They want to see a leaderboard of the rankings of all of the teachers
 
 Background: users have been added to database
   
@@ -11,7 +11,9 @@ Background: users have been added to database
   | johnsuser| jmk@uiowa.edu     | John       | Kelleher  | password1| password1             | 50          | user |
   | jsmith   | james@hotmail.com | James      | Smith     | password2| password2             | 25          | user |
 
-  And I am on the home page
+  And a user visits the signin page
+  And the user has an account
+  And the user submits valid signin information
   
   Scenario: View leaderboard on home page
     Then I should see "johnsuser" before "jsmith"
