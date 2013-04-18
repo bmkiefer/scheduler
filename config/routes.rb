@@ -1,7 +1,9 @@
 Rottenpotatoes::Application.routes.draw do
 
   resources :users do
-    resources :levels
+    resources :levels do
+      resources :transactionlevels
+    end
   end
 
   resources :sessions, only: [:new,:create,:destory]

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  
+
   def show
     id = params[:id] # retrieve movie ID from URI route
     @user = User.find(id) # look up movie by unique ID
@@ -16,11 +18,15 @@ class UsersController < ApplicationController
     # default: render 'new' template
   end
 
-  def create
+  def create    
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
       flash[:notice] = "#{@user.username}, Welcome to Technology Education"
+      @all_levels = Level.all 
+      @all_levels.each do |level|
+        Transactionlevel.create(:complete_flag => "Not Complete",:user_id => @user.id,:level_id => level.id)
+      end
       redirect_to @user
     else
       render 'new'
@@ -42,7 +48,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:notice] = "User '#{@user.username}' deleted."
-    redirect_to users_path
+    redirect_to home_path
   end
 
 end

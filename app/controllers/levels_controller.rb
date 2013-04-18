@@ -1,13 +1,16 @@
-class UsersController < ApplicationController
+class LevelsController < ApplicationController
 
   def show
-    id = params[:id] # retrieve movie ID from URI route
-    @user = User.find(id) # look up movie by unique ID
-    # will render app/views/movies/show.<extension> by default
+    id = params[:id] # retrieve level ID from URI route
+    user_id = params[:user_id]
+    @user = User.find(user_id)
+    @level = Level.find(id)
+    @transaction = Transactionlevel.find_by_level_id_and_user_id(@level.id,@user.id)
+    # will render app/views/level/show.<extension> by default
   end
 
   def index
-    @users = User.all
+    #@users = User.all
   end
 
   def new
@@ -15,27 +18,27 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(params[:user])
-    flash[:notice] = "#{@user.username} was successfully added."
-    redirect_to users_path
+    #@user = User.create!(params[:user])
+    #flash[:notice] = "#{@user.username} was successfully added."
+    #redirect_to users_path
   end
 
   def edit
-    @user = User.find params[:id]
+    #@user = User.find params[:id]
   end
 
   def update
-    @user = User.find params[:id]
-    @user.update_attributes!(params[:user])
-    flash[:notice] = "#{@user.username} was successfully updated."
-    redirect_to user_path(@user)
+    #@user = User.find params[:id]
+    #@user.update_attributes!(params[:user])
+    #flash[:notice] = "#{@user.username} was successfully updated."
+    #redirect_to user_path(@user)
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    flash[:notice] = "User '#{@user.username}' deleted."
-    redirect_to users_path
+    #@user = User.find(params[:id])
+    #@user.destroy
+    #flash[:notice] = "User '#{@user.username}' deleted."
+    #redirect_to users_path
   end
 
 end

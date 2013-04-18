@@ -82,8 +82,10 @@
                   %li
                     Role:
                     = @user.role
-
-
+                    %br/
+                    %br/
+                    %br/
+                    /= link_to 'Edit My Profile', edit_user_profile_path(@user)
           #col2
             %table#level_nav
               %thead
@@ -93,12 +95,13 @@
                 - @user.levels.each do |level_obj|
                   %tr
                     -if (@transactions.find_by_level_id(level_obj.id).complete_flag == "Not Complete")
-                      %td= link_to "#{level_obj.level_name}", user_level_path(level_obj)
+                      %td= link_to "#{level_obj.level_name} ", user_level_path(@user,level_obj)
                     -else
-                      %td= link_to "#{level_obj.level_name} Completed", user_level_path(level_obj)	
+                      %td= link_to "#{level_obj.level_name} Completed", user_level_path(@user,level_obj)	
           #col3
             %table#users
-              %thead
+              %thead 
+                LEADERBOARD
                 %tr
                   %th Rank
                   %th User
@@ -113,6 +116,3 @@
                     %td= user.total_score
                     
       #footer
-        = link_to 'Edit', edit_user_path(@user)
-        = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
-        = link_to 'Back to user list', users_path

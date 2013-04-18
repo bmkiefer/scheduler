@@ -34,6 +34,6 @@ all_users = User.all
 
 all_users.each do |user|
   all_levels.each do |level|
-    Transactionlevel.create(:complete_flag => "Complete",:user_id => user.id,:level_id => level.id)	 
+    Transactionlevel.create(:complete_flag => "Not Complete",:user_id => user.id,:level_id => level.id)	 
   end
 end
