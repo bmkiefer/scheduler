@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :transactions, :dependent => :destroy
-  has_many :levels, :through => :transactions
+  has_many :transactionlevels, :dependent => :destroy
+  has_many :levels, :through => :transactionlevels
 
   attr_accessible :username,:first_name,:last_name,:email,:password,:password_confirmation,:total_score,:role
   has_secure_password

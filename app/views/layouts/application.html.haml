@@ -21,7 +21,7 @@
         = link_to "Profile", user_path(current_user), :method => :get, :id => "Profile"
         = link_to "Home", home_path, :method => :get
         %h2
-          Current User
+          Current User: 
           = current_user.username
       - else
         = link_to "Sign-In", signin_path, :method => :get, :id => "Sign-In"
@@ -29,3 +29,4 @@
       
 
       = yield
+      = render :partial => 'layouts/footer'

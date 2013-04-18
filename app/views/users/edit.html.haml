@@ -16,10 +16,15 @@
   = label :user, :last_name, 'Last Name'
   = text_field :user, 'last_name'
 
-  = label :user, :total_score, 'Total Score'
-  = text_field :user, 'total_score'
+  = label :user, :last_name, 'Last Name'
+  = text_field :user, 'last_name'
+  
+  = label :user, :password, ''
+  = text_field :user, 'password'
 
-  = label :user, :role,'Role'
-  = select :user, :role, ['admin','user']
+  = label :user, :password_confirmation, ''
+  = text_field :user, 'password_confirmation'
 
   = submit_tag 'Update User Info'
+
+= button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'

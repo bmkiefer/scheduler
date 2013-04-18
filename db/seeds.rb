@@ -11,7 +11,7 @@ user_t = [
           {:username => 'johnsuser', :email => 'jmk@uiowa.edu', :first_name => 'John', :last_name => 'Kelleher', :password => 'password1',:password_confirmation => 'password1', :total_score => 50, :role => 'user'},
           {:username => 'jsmith', :email => 'james@hotmail.com', :first_name => 'James', :last_name => 'Smith', :password => 'password2',:password_confirmation => 'password2', :total_score => 25, :role => 'user'},
           {:username => 'kate_rog', :email => 'krogers@live.com', :first_name => 'Kate', :last_name => 'Rogers', :password => 'password3',:password_confirmation => 'password3', :total_score => 32, :role => 'user'},
-          {:username => 'links', :email => 'tina@gmail.com', :first_name => 'Tina', :last_name => 'Link', :password => 'password4',:password_confirmation => 'password4', :total_score => 12, :role => 'user'},
+          {:username => 'links', :email => 'tina@gmail.com', :first_name => 'Tina', :last_name => 'Link', :password => 'password4',:password_confirmation => 'password4', :total_score => 12, :role => 'user'}
           
           ]
 
@@ -20,11 +20,20 @@ user_t.each do |user|
 end
 
 level_t = [
-	    {:level_name => 'test', :points => 50, :activity => 'facebook.com'},
-	    {:level_name => 'test', :points => 50, :activity => 'facebook.com'},
-            {:level_name => 'test', :points => 50, :activity => 'facebook.com'}
+	    {:level_name => 'test1', :points => 50, :activity => 'facebook.com'},
+	    {:level_name => 'test2', :points => 50, :activity => 'facebook.com'},
+            {:level_name => 'test3', :points => 50, :activity => 'facebook.com'}
 	  ]
 
 level_t.each do |level|
   Level.create!(level)
+end
+
+all_levels = Level.all
+all_users = User.all
+
+all_users.each do |user|
+  all_levels.each do |level|
+    Transactionlevel.create(:complete_flag => "Not Complete",:user_id => user.id,:level_id => level.id)	 
+  end
 end
