@@ -92,7 +92,7 @@
                 %tr
                   %th LEVEL SELECT
               %tbody
-                - @user.levels.each do |level_obj|
+                - @levels_all.each do |level_obj|
                   %tr
                     -if (@transactions.find_by_level_id(level_obj.id).complete_flag == "Not Complete")
                       %td= link_to "#{level_obj.level_name} ", user_level_path(@user,level_obj)

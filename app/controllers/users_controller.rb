@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     id = params[:id] # retrieve movie ID from URI route
     @user = User.find(id) # look up movie by unique ID
     @users_all = User.order("total_score DESC")
+    @levels_all = Level.order("level_name ASC")
     @transactions = Transactionlevel.where(:user_id => @user.id)
     # will render app/views/movies/show.<extension> by default
   end
