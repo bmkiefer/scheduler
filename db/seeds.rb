@@ -25,7 +25,7 @@ level_t = [
             {:level_name => 'test3', :points => 50, :activity => 'facebook.com'},
             {:level_name => 'test4', :points => 50, :activity => 'facebook.com'},
 	    {:level_name => 'test5', :points => 50, :activity => 'facebook.com'},
-            {:level_name => 'test6', :points => 50, :activity => 'facebook.com'}
+            {:level_name => 'test6', :points => 50, :activity => 'facebook.com'},
             {:level_name => 'test7', :points => 50, :activity => 'facebook.com'},
 	    {:level_name => 'test8', :points => 50, :activity => 'facebook.com'},
             {:level_name => 'test9', :points => 50, :activity => 'facebook.com'}
