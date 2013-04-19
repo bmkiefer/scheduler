@@ -34,8 +34,8 @@ class TransactionlevelsController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @level = Level.find(params[:level_id])
-    @user.total_score = (@user.total_score + @level.points)
-    @user.update_attributes!(@user)
+    #@user.total_score = (@user.total_score + @level.points)
+    #@user.update_attributes!(@user)
     @transaction = Transactionlevel.find_by_level_id_and_user_id(@level.id,@user.id)
     @transaction.update_attributes!(:level_id => @level.id, :user_id => @user.id,:complete_flag => "Complete")
     #@transacion = User.find params[:id]
