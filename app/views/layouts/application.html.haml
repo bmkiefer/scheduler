@@ -17,16 +17,17 @@
         #error.message= flash[:error]
 
       - if signed_in?
-        = link_to "Sign-Out", signout_path, :method => :delete, :id => "Sign-Out"
-        = link_to "Profile", user_path(current_user), :method => :get, :id => "Profile"
-        = link_to "Home", home_path, :method => :get
-        %h2
+        #applink= link_to "Sign-Out", signout_path, :method => :delete, :id => "Sign-Out"
+        #applink= link_to "Profile", user_path(current_user), :method => :get, :id => "Profile"
+        #applink= link_to "Home", home_path, :method => :get
+        #userinfo
           Current User: 
           = current_user.username
       - else
-        = link_to "Sign-In", signin_path, :method => :get, :id => "Sign-In"
-        = link_to "Sign-Up", signup_path, :method => :get, :id => "Sign-Up"
+        #applink= link_to "Sign-In", signin_path, :method => :get, :id => "Sign-In"
+        #applink= link_to "Sign-Up", signup_path, :method => :get, :id => "Sign-Up"
       
-
+      %br
+      %br
       = yield
       = render :partial => 'layouts/footer'

@@ -10,11 +10,52 @@ div#main {
   margin: 0;
   padding: 0 20px 20px;
 }
-a {
-  background: transparent;
-  color: maroon;
-  text-decoration: underline;
+div#applink a {
+  width: 10em;
+  height: 1.4em;
+  text-align:center;
+  background-color: red;
+  border: 3px black outset;
+  color: white;
+  float: left;
+  text-decoration: none;
   font-weight: bold;
+}
+div#userinfo {
+  float: right;
+}
+div#applink a:hover {
+  width: 10em;
+  height: 1.4em;
+  text-align:center;
+  background-color: blue;
+  border: 3px black inset;
+  color: white;
+  float: left;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.levellink a {
+  width: 10em;
+  height: 1.4em;
+  text-align:center;
+  background-color: black;
+  border: 6px black outset;
+  color: yellow;
+  float: left;
+  text-decoration: none;
+  font-weight: bold;
+}
+.levellink a:hover {
+  width: 10em;
+  height: 1.4em;
+  text-align:center;
+  background-color: yellow;
+  border: 6px black inset;
+  color: black;
+  float: left;
+  text-decoration: none;
+  font-weight: bolder;
 }
 h1 {
   color: maroon;
