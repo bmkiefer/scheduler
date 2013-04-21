@@ -23,6 +23,8 @@ div#applink a {
 }
 div#userinfo {
   float: right;
+  font-weight: bolder;
+  color: red;
 }
 div#applink a:hover {
   width: 10em;
@@ -40,22 +42,33 @@ div#applink a:hover {
   height: 1.4em;
   text-align:center;
   background-color: black;
-  border: 6px black outset;
+  border: 3px red outset;
   color: yellow;
   float: left;
   text-decoration: none;
   font-weight: bold;
+  padding: 0 0px 0px;
+  margin: 0;
+  display:block;
 }
+
+table.level_nav  {
+  border-collapse: collapse;
+}
+
 .levellink a:hover {
   width: 10em;
   height: 1.4em;
   text-align:center;
   background-color: yellow;
-  border: 6px black inset;
+  border: 3px red inset;
   color: black;
   float: left;
   text-decoration: none;
   font-weight: bolder;
+  padding: 0 0px 0px;
+  margin: 0;
+  display:block;
 }
 h1 {
   color: maroon;
@@ -92,7 +105,7 @@ table#movies th, table#movies td {
 table#movies th.hilite {
   background-color: yellow;
 }
-#notice #warning {
+#notice.message #warning.message #error.message {
   background: rosybrown;
   margin: 1em 0;
   padding: 4px;
