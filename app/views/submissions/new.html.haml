@@ -1,5 +1,5 @@
 %div
-= button_to 'Submit Feedback', home_path
+= button_to 'Submit Feedback', user_path(current_user), :method => :get, :id => "Profile"
 %div
   %h2 Mission completed: #{@level.level_name}
 %div 

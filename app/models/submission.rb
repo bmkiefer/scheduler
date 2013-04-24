@@ -1,5 +1,4 @@
 class Submission < ActiveRecord::Base
-  #belongs_to :user
   belongs_to :level
   belongs_to :mission
   has_many :questions
