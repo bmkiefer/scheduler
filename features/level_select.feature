@@ -9,9 +9,8 @@ Feature: Level Select
     When the user submits valid signin information
     Then he should see his profile page
 
-
     Given a level has been created
-    #When I click on a level
+    When I click on a level
     Then I should be on the level detail page
     When I click on complete level
     Then he should see his profile page
