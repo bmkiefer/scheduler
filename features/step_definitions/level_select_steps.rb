@@ -1,27 +1,25 @@
 Given /^a level has been created$/ do
   @user = User.create(username: "example", email: "user@example.com",
-                      password: "foobar", password_confirmation: "foobar",
-		      id: "3", user_id: '1')
+                      password: "foobar", password_confirmation: "foobar", user_id: "1" )
+
+  @level = Level.create!(level_name: 'test1' , points: '50', activity: 'facebook.com' )
+
 end
 
 When /^I click on a level$/ do
-  puts page.html
-  click_button "test1"
+  mypage = page.body
+  mypage.include? @level.level_name
 end
 
 Then /^I should be on the level detail page$/ do
-  visit('/users/user_id/levels/id')
+  visit user_level_path(@user , @level)
 end
 
 When /^I click on complete level$/ do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then /^I should be back on the profile page$/ do
-  pending # express the regexp above with the code you wish you had
+  click_button 'Complete Level'
 end
 
 Then /^I should see that the level has been completed$/ do
-  pending # express the regexp above with the code you wish you had
+  mypage = page.body
+  mypage.include? "#{@level.level_name} Completed"
 end
-
