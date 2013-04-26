@@ -1,24 +1,10 @@
-%div
-= button_to 'Submit Feedback', user_path(current_user), :method => :get, :id => "Profile"
-%div
-  %h2 Mission completed: #{@level.level_name}
-%div 
-  Rate this mission:
-  %select
-    %option 1
-    %option 2
-    %option 3
-    %option 4
-    %option 5
-
-%div
-- @questions.each do |q|
-  #{q.question}
-  %div
-  %textarea{:cols => "50", :name => "comments", :rows => "5"}
-    Answer here...
-  %div
-  %br
-  
-%div
-= button_to 'Submit Feedback', user_path(current_user), :method => :get, :id => "Profile"
+%h2 Mission completed: #{@level.level_name} 
+= form_tag user_level_submission_submission_responses_path(@user, @level, @submission) do
+  = label :submission_response, :rating, 'Rate this mission:'
+  = select :submission_response, :rating, ['1','2','3','4','5']
+  - @questions.each do |q|
+    -#= label :submission, :question_id
+    = hidden_field :submission, :question, :value => q.submission_id
+    = label :submission, :question,  "#{q.question}"
+    = text_area :submission, :question, :cols => "50", :name => "response", :rows => "5", :value => 'Answer here...'
+  = submit_tag 'Submit Feedback'

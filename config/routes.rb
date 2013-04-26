@@ -5,7 +5,10 @@ Rottenpotatoes::Application.routes.draw do
     resources :levels do
       resources :transactionlevels
       resources :missions do
-        resources :transactionmissions
+	resources :submissions do
+	resources :submission_responses, only: [:create]
+	end        
+	resources :transactionmissions
       end
     end
   end

@@ -14,6 +14,8 @@ class LevelsController < ApplicationController
     end
 
     @transactions = Transactionmission.where(:user_id => @user.id, :level_id => @level.id)
+    @transaction = Transactionlevel.find_by_level_id_and_user_id(@level.id,@user.id)
+    @submission = Submission.find_by_level_id(@level.id)
     # will render app/views/level/show.<extension> by default
   end
 
