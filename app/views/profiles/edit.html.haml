@@ -1,0 +1,14 @@
+-# edit.html.haml using partial
+
+%h1 Edit Existing User
+
+= form_tag user_profile_path(@user), :method => :put do
+
+  = label :profile, :first_name, 'First Name'
+  = text_field :profile, 'first_name'
+
+  = label :profile, :last_name, 'Last Name'
+  = text_field :profile, 'last_name'  
+  %br
+  = submit_tag 'Update Name'
+

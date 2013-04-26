@@ -1,16 +1,40 @@
 -# in app/views/movies/show.html.haml
 
+%style{ :type => "text/css" }
+  :sass    
+    #leftcol
+      float: left
+      width: 50%
+      position: relative
+    #rightcol
+      float: right
+      width: 50%
+      position: relative
+
 %h2 Details about level #{@level.level_name}
 
-%ul#attributes
-  %li
-    Points:
-    = @level.points
-  %li
-    Activity:
-    = @level.activity
+%div
+  #leftcol
+    %ul#attributes
+      %li
+        Points:
+        = @level.points
+      %li
+        Activity:
+        = @level.activity
+    %br
+    %br
+    = link_to 'Back To Level Select', user_path(@user)
 
-  = button_to 'Complete Level', feedback_path( :user_id => @user , :id => @level, :complete_flag => @transaction)
-%br
-%br
-= link_to 'Back To Level Select', user_path(@user)
+  #rightcol
+    %table.mission_nav
+      %thead
+        %tr
+          %th MISSION SELECT
+      %tbody
+      - @missions_all.each do |mission_obj|
+        %tr
+          -if (@transactions.find_by_mission_id(mission_obj.id).complete_flag == "Not Complete")
+            %td.missionlink= link_to "#{mission_obj.mission_name} ", user_level_mission_path(@user,@level,mission_obj)
+          -else
+            %td.missionlink= link_to "#{mission_obj.mission_name} Completed", user_level_mission_path(@user,@level,mission_obj)

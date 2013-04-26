@@ -72,20 +72,20 @@
                     = @user.email
                   %li
                     First Name:
-                    = @user.first_name
+                    = @profile.first_name
                   %li
                     Last Name:
-                    = @user.last_name
+                    = @profile.last_name
                   %li
                     Total Score:
-                    = @user.total_score
+                    = @profile.total_score
                   %li
                     Role:
                     = @user.role
                     %br/
                     %br/
                     %br/
-                    /= link_to 'Edit My Profile', edit_user_profile_path(@user)
+                    %span.profilelink= link_to 'Edit My Profile', edit_user_profile_path(@user)
           #col2
             %table.level_nav
               %thead
@@ -109,10 +109,11 @@
               %tbody
                 - i = 0
                 - @users_all.each do |user|
+                  - @profile = @profilescore_all.find_by_user_id(user.id)
                   - i += 1
                   %tr
                     %td= i
                     %td= user.username
-                    %td= user.total_score
+                    %td= @profile.total_score
                     
       #footer

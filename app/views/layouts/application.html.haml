@@ -9,12 +9,21 @@
   %head
     %h1.title Technology Education!
     #main
-      - if flash[:notice]
+      - if flash[:notice] && flash[:level_complete]
+        #notice.level_complete= flash[:level_complete]
         #notice.message= flash[:notice]
+      - elsif flash[:notice]
+        #notice.message= flash[:notice]
+        %br
       - elsif flash[:warning]
         #warning.message= flash[:warning]
+        %br
       - elsif flash[:error]
         #error.message= flash[:error]
+        %br
+      - else
+        %br
+        %br
 
       - if signed_in?
         #applink= link_to "Sign-Out", signout_path, :method => :delete, :id => "Sign-Out"

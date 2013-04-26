@@ -32,16 +32,24 @@ class TransactionlevelsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user_id])
-    @level = Level.find(params[:level_id])
-    #@user.total_score = (@user.total_score + @level.points)
-    #@user.update_attributes!(@user)
-    @transaction = Transactionlevel.find_by_level_id_and_user_id(@level.id,@user.id)
-    @transaction.update_attributes!(:level_id => @level.id, :user_id => @user.id,:complete_flag => "Complete")
-    #@transacion = User.find params[:id]
-    #@user.update_attributes!(params[:user])
-    flash[:notice] = "#{@level.level_name} was Completed. Great Job!!"
-    redirect_to user_path(@user)
+    @complete_level_flag = true
+    @transactions = Transactionmissions.by_user_id_and_level_id(params[:user_id],params[:id])
+    @transaction.each do |trans|
+      if trans.complete_flag == "Not Complete"
+        @complete_level_flag = nil
+      end
+    end
+
+    if @complete_level_flag
+      @user = User.find(params[:user_id])
+      @level = Level.find(params[:level_id])
+      @transaction = Transactionlevel.find_by_level_id_and_user_id(@level.id,@user.id)
+      @transaction.update_attributes!(:level_id => @level.id, :user_id => @user.id,:complete_flag => "Complete")
+      flash[:level_complete] = "#{@level.level_name} was Completed by finishing all Missions. Great Job!!"
+      redirect_to user_path(@user)
+    else
+      redirect_to user_level_path(@user,@level)
+    end
   end
 
   def destroy
