@@ -10,7 +10,7 @@
     Activity:
     = @level.activity
 
-  = button_to 'Complete Level', feedback_path( :user_id => @user , :id => @level, :complete_flag => @transaction)
+  = link_to 'Complete Level', user_level_submission_path( @user, @level, @submission)
 %br
 %br
 = link_to 'Back To Level Select', user_path(@user)

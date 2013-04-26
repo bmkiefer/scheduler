@@ -6,6 +6,7 @@ class LevelsController < ApplicationController
     @user = User.find(user_id)
     @level = Level.find(id)
     @transaction = Transactionlevel.find_by_level_id_and_user_id(@level.id,@user.id)
+    @submission = Submission.find_by_level_id(@level.id)
     # will render app/views/level/show.<extension> by default
   end
 

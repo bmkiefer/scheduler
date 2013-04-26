@@ -3,6 +3,9 @@ Rottenpotatoes::Application.routes.draw do
   resources :users do
     resources :levels do
       resources :transactionlevels
+      resources :submissions do
+	resources :submission_responses, only: [:create]
+	end
     end
   end
 
@@ -12,7 +15,6 @@ Rottenpotatoes::Application.routes.draw do
   match '/signin' => 'sessions#new'
   match '/signout' => 'sessions#destroy', via: :delete
   match '/signup' => 'users#new'
-  match '/feedback' => 'submissions#show'  
   # map '/' to be a redirect to '/home'
   root :to => redirect('/home')
 end
