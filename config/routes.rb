@@ -12,7 +12,7 @@ Rottenpotatoes::Application.routes.draw do
   match '/signin' => 'sessions#new'
   match '/signout' => 'sessions#destroy', via: :delete
   match '/signup' => 'users#new'
-  match '/feedback' => 'submissions#new'  
+  match '/feedback' => 'submissions#show'  
   # map '/' to be a redirect to '/home'
   root :to => redirect('/home')
 end

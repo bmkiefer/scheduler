@@ -35,6 +35,22 @@ level_t.each do |level|
   Level.create!(level)
 end
 
+Level.all.each do |level|
+  Submission.create(:level_id => level.id )
+end
+
+question_t = [
+		'What did you learn in this mission?',
+		'What did you not quite get?',
+		'How smart do you feel now?'
+	     ]
+
+Submission.all.each do |submission|
+  question_t.each do |question|
+     Question.create(:submission_id => submission.id, :question => question)
+  end
+end		
+
 all_levels = Level.all
 all_users = User.all
 
