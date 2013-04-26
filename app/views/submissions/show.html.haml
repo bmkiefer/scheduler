@@ -12,9 +12,13 @@
     %option 5
 
 %div
+- @questions.each do |q|
+  #{q.question}
+  %div
   %textarea{:cols => "50", :name => "comments", :rows => "5"}
-    :preserve
-      
-      Enter your comments here...
+    Answer here...
+  %div
   %br
-
+  
+%div
+= button_to 'Submit Feedback', user_path(current_user), :method => :get, :id => "Profile"
