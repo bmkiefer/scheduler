@@ -52,6 +52,21 @@ div#applink a:hover {
   display:block;
 }
 
+.missionlink a {
+  width: 20em;
+  height: 1.6em;
+  text-align:center;
+  background-color: black;
+  border: 3px red outset;
+  color: blue;
+  float: left;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 0px 0px;
+  margin: 0;
+  display:block;
+}
+
 table.level_nav  {
   border-collapse: collapse;
 }
@@ -70,6 +85,22 @@ table.level_nav  {
   margin: 0;
   display:block;
 }
+
+.missionlink a:hover {
+  width: 20em;
+  height: 1.6em;
+  text-align:center;
+  background-color: blue;
+  border: 3px red inset;
+  color: black;
+  float: left;
+  text-decoration: none;
+  font-weight: bolder;
+  padding: 0 0px 0px;
+  margin: 0;
+  display:block;
+}
+
 h1 {
   color: maroon;
   font-size: 150%;

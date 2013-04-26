@@ -1,19 +1,13 @@
-class LevelsController < ApplicationController
+class MissionsController < ApplicationController
 
   def show
     id = params[:id] # retrieve level ID from URI route
     user_id = params[:user_id]
+    level_id = params[:level_id]
     @user = User.find(user_id)
-    @level = Level.find(id)
-    @missions = Mission.order("mission_name ASC")
-    @missions_all = []
-    @missions.each do |miss|
-      if miss.level_id == @level.id
-        @missions_all.push(Mission.find(miss.id))
-      end
-    end
-
-    @transactions = Transactionmission.where(:user_id => @user.id, :level_id => @level.id)
+    @level = Level.find(level_id)
+    @mission = Mission.find(id)
+    @transaction = Transactionmission.find_by_level_id_and_user_id_and_mission_id(@level.id,@user.id,@mission.id)
     # will render app/views/level/show.<extension> by default
   end
 

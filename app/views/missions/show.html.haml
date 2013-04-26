@@ -1,0 +1,17 @@
+%h2 Details about level #{@mission.mission_name}
+
+%ul#attributes
+  %li
+    Points:
+    = @mission.points
+  %li
+    Description:
+    = @mission.description
+  %li
+    Mission:
+    = @mission.url
+  
+= button_to 'Complete Mission', user_level_mission_transactionmission_path(params[:user_id],params[:level_id],params[:id],@transaction), :method => :put
+%br
+%br
+= link_to 'Back To Mission Select', user_level_path(params[:user_id],params[:level_id])

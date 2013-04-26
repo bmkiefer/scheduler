@@ -8,11 +8,11 @@
   = label :user, :email, 'Email'
   = text_field :user, 'email'
 
-  = label :user, :first_name, 'First Name'
-  = text_field :user, 'first_name'
+  = label :profile, :first_name, 'First Name'
+  = text_field :profile, 'first_name'
 
-  = label :user, :last_name, 'Last Name'
-  = text_field :user, 'last_name'
+  = label :profile, :last_name, 'Last Name'
+  = text_field :profile, 'last_name'
 
   = label :user, :password, 'Password'
   = password_field :user, 'password'
@@ -20,8 +20,8 @@
   = label :user, :password_confirmation, 'Password Confirmation'
   = password_field :user, 'password_confirmation'
 
-  = label :user, :total_score, 'Total Score'
-  = text_field :user, 'total_score', :readonly => true , :value => '0'
+  = label :profile, :total_score, 'Total Score'
+  = text_field :profile, 'total_score', :readonly => true , :value => '0'
 
   = label :user, :role,'Role'
   = text_field :user, 'role', :readonly => true, :value => 'user'
