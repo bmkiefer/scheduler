@@ -1,0 +1,18 @@
+-# edit.html.haml using partial
+
+%h1 Change Password
+
+= form_tag password_update_path(:id => @user.id), :method => :put do
+
+  = label :user, :old_password, 'Current Password'
+  = text_field :user, 'password'
+
+  = label :user, :password, 'New Password'
+  = text_field :user, 'password'
+
+  = label :user, :password_confirmation, 'New Password Confirmation'
+  = text_field :user, 'password_confirmation'
+
+  = submit_tag 'Save Changes'
+  
+= link_to 'Back to profile', user_path(@user)
