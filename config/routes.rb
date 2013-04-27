@@ -9,6 +9,7 @@ Rottenpotatoes::Application.routes.draw do
   resources :sessions, only: [:new,:create,:destory]
   match ':controller/:action/:id'
   match '/password/edit' => 'password#edit'
+  match '/password/update' => 'password#update'
   match '/home' => 'pages#home'
   match '/signin' => 'sessions#new'
   match '/signout' => 'sessions#destroy', via: :delete
