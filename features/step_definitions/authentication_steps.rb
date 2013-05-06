@@ -12,7 +12,9 @@ end
 
 Given /^the user has an account$/ do
   @user = User.create(username: "example", email: "user@example.com",
-                      password: "foobar", password_confirmation: "foobar")
+                      password: "foobar", password_confirmation: "foobar" )
+
+  @profile = Profile.create( first_name: "marcus", last_name: "scott", user_id: "1", total_score: "0")
 end
 
 When /^the user submits valid signin information$/ do
