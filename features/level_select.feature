@@ -19,3 +19,5 @@ Feature: Level Select
     When I click on complete level
     Then he should see his profile page
     And I should see that the level has been completed
+
+    

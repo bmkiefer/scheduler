@@ -11,3 +11,11 @@ Feature: Signing in
     When the user submits valid signin information
     Then he should see his profile page
       And he should see a signout link
+
+  Scenario: Succesful Logout
+    Given a user visits the signin page
+      And the user has an account
+    When the user submits valid signin information
+    Then he should see his profile page
+    When he clicks on the signout link
+    Then he should be signed out and on the home page
