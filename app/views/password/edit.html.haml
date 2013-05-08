@@ -4,14 +4,14 @@
 
 = form_tag password_update_path(:id => @user.id), :method => :put do
 
-  = label :user, :old_password, 'Current Password'
-  = text_field :user, 'password'
+  = label :user, :password, 'Current Password'
+  = password_field :user, 'old_password'
 
   = label :user, :new_password, 'New Password'
-  = text_field :user, 'password'
+  = password_field :user, 'new_password'
 
   = label :user, :new_password_confirmation, 'New Password Confirmation'
-  = text_field :user, 'password_confirmation'
+  = password_field :user, 'new_password_confirmation'
 
   = submit_tag 'Save Changes'
   
