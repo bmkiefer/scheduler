@@ -4,9 +4,11 @@ class MissionsController < ApplicationController
     id = params[:id] # retrieve level ID from URI route
     user_id = params[:user_id]
     level_id = params[:level_id]
+    submission_id = params[:submission_id]
     @user = User.find(user_id)
     @level = Level.find(level_id)
     @mission = Mission.find(id)
+    @submission = Submission.find_by_mission_id(id)
     @transaction = Transactionmission.find_by_level_id_and_user_id_and_mission_id(@level.id,@user.id,@mission.id)
     # will render app/views/level/show.<extension> by default
   end

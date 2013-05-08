@@ -1,10 +1,9 @@
-%h2 Mission completed: #{@level.level_name} 
-= form_tag user_level_submission_submission_responses_path(@user, @level, @submission) do
+%h2 Mission completed: #{@mission.mission_name} 
+= form_tag user_level_mission_submission_submission_responses_path(@user, @level, @mission, @submission) do
   = label :submission_response, :rating, 'Rate this mission:'
   = select :submission_response, :rating, ['1','2','3','4','5']
   - @questions.each do |q|
-    -#= label :submission, :question_id
     = hidden_field :submission, :question, :value => q.submission_id
     = label :submission, :question,  "#{q.question}"
-    = text_area :submission, :question, :cols => "50", :name => "response", :rows => "5", :value => 'Answer here...'
+    = text_area :submission, :question, :cols => "50", :name => "Question_#{q.id}_Response", :rows => "5", :value => 'Answer here... '
   = submit_tag 'Submit Feedback'
