@@ -10,6 +10,7 @@ class MissionsController < ApplicationController
     @mission = Mission.find(id)
     @submission = Submission.find_by_mission_id(id)
     @transaction = Transactionmission.find_by_level_id_and_user_id_and_mission_id(@level.id,@user.id,@mission.id)
+    @submission_response = SubmissionResponse.find_by_user_id_and_submission_id(@user.id, @submission.id)
     # will render app/views/level/show.<extension> by default
   end
 

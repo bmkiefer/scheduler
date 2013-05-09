@@ -9,6 +9,8 @@ class ProfilesController < ApplicationController
     @levels_all = Level.order("level_name ASC")
     @transactions = Transactionlevel.where(:user_id => @user.id)
     @profile = Profile.find_by_user_id(id)
+
+    @submission_response = SubmissionResponse.where(:user_id => id)
     # will render app/views/movies/show.<extension> by default
   end
 
