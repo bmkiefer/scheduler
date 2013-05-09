@@ -8,7 +8,6 @@ class SubmissionResponsesController < ApplicationController
 
   def create
     @level = Level.find(params[:level_id]) 
-    #@mission = Mission.find_by_level_id(params[:mission_id])
     @mission = Mission.find(params[:mission_id])
     @submission_response = SubmissionResponse.create(:submission_id => params[:submission_id], :user_id => params[:user_id], :rate => params[:submission_response][:rating] )
     @all_questions = Question.where(:submission_id => params[:submission_id])
@@ -61,10 +60,8 @@ class SubmissionResponsesController < ApplicationController
     @level = Level.find(params[:level_id])
     @user = User.find(params[:user_id]) 
     @mission = Mission.find(params[:mission_id])
-    #@rating = SubmissionResponse.where(:submission_id => params[:submission_id], :user_id => params[:user_id], :rate => params[:submission_response][:rating] )
     @submission_response = SubmissionResponse.find_by_user_id_and_submission_id(params[:user_id], params[:submission_id])
     @all_questions = Question.where(:submission_id => params[:submission_id])
     @responses = QuestionResponse.where(:id => params[:id])
-    #@responses = QuestionResponse.find(params[:id])
   end
 end

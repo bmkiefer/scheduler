@@ -1,0 +1,8 @@
+%h2 All Submission Feedback for #{@user.username}
+
+- @submission_response.each do |sub|
+  - @submission = Submission.find(sub.submission_id)
+  - @mission = Mission.find(@submission.mission_id)
+  - @level = Level.find(@submission.level_id)
+  = button_to "Level: #{@level.level_name} Mission: #{@mission.mission_name}", user_level_mission_submission_submission_response_path(params[:id], @submission.level_id, @submission.mission_id, @submission, sub.id ), :method => :get
+  %br  

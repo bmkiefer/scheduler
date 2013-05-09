@@ -86,6 +86,8 @@
                     %br/
                     %br/
                     %span.profilelink= link_to 'Edit My Profile', edit_user_profile_path(@user)
+                    %br/
+                    %span.profilelink= link_to 'View All Feedback Submissions', user_profile_path(@user), :method => :get
           #col2
             %table.level_nav
               %thead
