@@ -13,6 +13,7 @@
   
 = button_to 'Complete Mission', user_level_mission_transactionmission_path(params[:user_id],params[:level_id],params[:id],@transaction), :method => :put
 = button_to 'Submit Feedback', user_level_mission_submission_path(params[:user_id],params[:level_id], params[:id], @submission), :method => :get
+= button_to 'View Feedback', user_level_mission_submission_submission_response_path(params[:user_id],params[:level_id], params[:id], @submission ), :method => :get
 
 %br
 %br

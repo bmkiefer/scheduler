@@ -1,0 +1,16 @@
+%h2 Submission Feedback for #{@mission.mission_name}
+
+%ul#attributes
+  %li
+    Rating:
+    = @submission_response.rate
+    %br
+    - @all_questions.each do |q|
+      - @response = QuestionResponse.find_by_question_id_and_submission_response_id(q.id, params[:id])
+      %br
+      %li
+        Questions:
+        = q.question
+        %br
+        Response:
+        = @response.response

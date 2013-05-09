@@ -6,7 +6,7 @@ Rottenpotatoes::Application.routes.draw do
       resources :transactionlevels
       resources :missions do
 	resources :submissions do
-	resources :submission_responses, only: [:create]
+	resources :submission_responses, only: [:create, :show]
 	end        
 	resources :transactionmissions
       end
