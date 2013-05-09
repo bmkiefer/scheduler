@@ -29,7 +29,8 @@ class TransactionmissionsController < ApplicationController
       @transaction.update_attributes!(:level_id => @level.id, :user_id => @user.id,:mission_id => @mission.id, :complete_flag => "Complete")
       flash[:notice] = "#{@mission.mission_name} was Completed. Great Job!! #{@mission.points} Points Awarded"
       @complete_level_flag = true
-      @transactions = Transactionmission.where(:user_id => params[:user_id], :level_id => params[:level_id])
+      #@transactions = Transactionmission.where(:user_id => params[:user_id], :level_id => params[:level_id])
+      @transactions = SubmissionRespose.where(:user_id => params[:user_id], :level_id => params[:level_id])
       @transactions.each do |trans|
         if trans.complete_flag == "Not Complete"
           @complete_level_flag = nil

@@ -1,4 +1,4 @@
-%h2 Details about level #{@mission.mission_name}
+%h2 Details about mission #{@mission.mission_name}
 
 %ul#attributes
   %li
@@ -12,6 +12,8 @@
     = @mission.url
   
 = button_to 'Complete Mission', user_level_mission_transactionmission_path(params[:user_id],params[:level_id],params[:id],@transaction), :method => :put
+= button_to 'Submit Feedback', user_level_mission_submission_path(params[:user_id],params[:level_id], params[:id], @submission), :method => :get
+
 %br
 %br
 = link_to 'Back To Mission Select', user_level_path(params[:user_id],params[:level_id])

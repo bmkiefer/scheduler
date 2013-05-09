@@ -12,6 +12,12 @@ Feature: Level Select
     Given a level has been created
     When I click on a level
     Then I should be on the level detail page
+
+    Given a  mission has been created
+    And I should see missions to complete
+    When I click on a mission, I should be on mission detail page
     When I click on complete level
     Then he should see his profile page
     And I should see that the level has been completed
+
+    
