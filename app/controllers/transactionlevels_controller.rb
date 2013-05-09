@@ -33,7 +33,8 @@ class TransactionlevelsController < ApplicationController
 
   def update
     @complete_level_flag = true
-    @transactions = Transactionmissions.by_user_id_and_level_id(params[:user_id],params[:id])
+    #@transactions = Transactionmissions.by_user_id_and_level_id(params[:user_id],params[:id])
+    @transaction = SubmissionResponse.by_user_id_and_level_id(params[:user_id],params[:id])
     @transaction.each do |trans|
       if trans.complete_flag == "Not Complete"
         @complete_level_flag = nil
@@ -43,7 +44,8 @@ class TransactionlevelsController < ApplicationController
     if @complete_level_flag
       @user = User.find(params[:user_id])
       @level = Level.find(params[:level_id])
-      @transaction = Transactionlevel.find_by_level_id_and_user_id(@level.id,@user.id)
+      #@transaction = Transactionlevel.find_by_level_id_and_user_id(@level.id,@user.id)
+      @transactions = SubmissionResponse.find_by_level_id_and_user_id(@level.id,@user.id)
       @transaction.update_attributes!(:level_id => @level.id, :user_id => @user.id,:complete_flag => "Complete")
       flash[:level_complete] = "#{@level.level_name} was Completed by finishing all Missions. Great Job!!"
       redirect_to user_path(@user)

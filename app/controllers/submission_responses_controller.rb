@@ -8,7 +8,8 @@ class SubmissionResponsesController < ApplicationController
 
   def create
     @level = Level.find(params[:level_id])
-    @mission = Mission.find_by_level_id(params[:mission_id])
+    #@mission = Mission.find_by_level_id(params[:mission_id])
+    @mission = Mission.find(params[:mission_id])
     @submission_response = SubmissionResponse.create(:submission_id => params[:submission_id], :user_id => params[:user_id], :rate => params[:submission_response][:rating] )
     @all_questions = Question.where(:submission_id => params[:submission_id])
     @user = User.find(params[:user_id])
@@ -17,9 +18,9 @@ class SubmissionResponsesController < ApplicationController
 	QuestionResponse.create(:question_id => q.id, :submission_response_id => @submission_response.id, :response => params["Question_#{q.id}_Response".to_sym])
     end
 
-    
     @profile = Profile.find_by_user_id(params[:user_id])
     @transaction = Transactionmission.find_by_level_id_and_user_id_and_mission_id(@level.id,@user.id,@mission.id)
+    @transactions = Transactionmission.where(:user_id => params[:user_id], :level_id => params[:level_id])
     if @transaction.complete_flag == "Not Complete"
       @profile.total_score = (@profile.total_score + @mission.points)
       @profile.update_attributes!(:user_id => @profile.user_id,:first_name => @profile.first_name, :last_name => @profile.last_name, :total_score => @profile.total_score)
