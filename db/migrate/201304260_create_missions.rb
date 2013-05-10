@@ -2,7 +2,7 @@ class CreateMissions < ActiveRecord::Migration
   def up
     create_table :missions do |t|
       t.string :mission_name
-      t.string :description
+      t.text :description
       t.integer :points
       t.string :urllink_type
       t.string :url
