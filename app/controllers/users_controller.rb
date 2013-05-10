@@ -55,6 +55,9 @@ class UsersController < ApplicationController
       Profile.create!(@profile_array)
       @all_levels.each do |level|
         Transactionlevel.create(:complete_flag => "Not Complete",:user_id => @user.id,:level_id => level.id)
+        Mission.where(:level_id => level.id).each do |mission_obj|
+        Transactionmission.create!(:complete_flag => "Not Complete",:user_id => @user.id,:level_id => level.id, :mission_id => mission_obj.id)
+      end
       end
       redirect_to @user
     else
