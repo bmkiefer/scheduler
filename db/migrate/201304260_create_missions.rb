@@ -5,7 +5,7 @@ class CreateMissions < ActiveRecord::Migration
       t.text :description
       t.integer :points
       t.string :urllink_type
-      t.string :url
+      t.text :url
       t.references :level
     end
   end
