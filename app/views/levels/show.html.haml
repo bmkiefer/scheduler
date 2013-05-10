@@ -4,14 +4,14 @@
   :sass    
     #leftcol
       float: left
-      width: 50%
+      width: 25%
       position: relative
     #rightcol
       float: right
-      width: 50%
+      width: 75%
       position: relative
 
-%h2 Details about level #{@level.level_name}
+
 
 %div
   #leftcol
@@ -19,18 +19,19 @@
       %li
         Points:
         = @level.points
-      %li
-        Activity:
-        = @level.activity
+      
     %br
     %br
     = link_to 'Back To Level Select', user_path(@user)
 
   #rightcol
+    %h1 #{@level.level_name}
+    %li
+      Activity:
+      = @level.activity.html_safe
+    %h1 Below are the missions for #{@level.level_name}
     %table.mission_nav
       %thead
-        %tr
-          %th MISSION SELECT
       %tbody
       - @missions_all.each do |mission_obj|
         %tr

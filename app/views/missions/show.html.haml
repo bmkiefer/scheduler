@@ -1,4 +1,4 @@
-%h2 Details about level #{@mission.mission_name}
+%h1 #{@mission.mission_name}
 
 %ul#attributes
   %li
@@ -6,10 +6,10 @@
     = @mission.points
   %li
     Description:
-    = @mission.description
+    = @mission.description.html_safe
   %li
     Mission:
-    = @mission.url
+    = @mission.url.html_safe
   
 = button_to 'Complete Mission', user_level_mission_transactionmission_path(params[:user_id],params[:level_id],params[:id],@transaction), :method => :put
 %br
