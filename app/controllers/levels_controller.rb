@@ -5,7 +5,7 @@ class LevelsController < ApplicationController
     user_id = params[:user_id]
     @user = User.find(user_id)
     @level = Level.find(id)
-    @missions = Mission.order("mission_name ASC")
+    @missions = Mission.all
     @missions_all = []
     @missions.each do |miss|
       if miss.level_id == @level.id

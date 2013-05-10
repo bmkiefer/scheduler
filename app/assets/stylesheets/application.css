@@ -2,9 +2,9 @@ html, body {
   margin: 0;
   padding: 0;
   background: White;
-  color: DarkSlateGrey;
+  color: black;
   font-family: Tahoma, Verdana, sans-serif;
-  font-size: 10pt;
+  font-size: 11pt;
 }
 div#main {
   margin: 0;
@@ -14,9 +14,9 @@ div#applink a {
   width: 10em;
   height: 1.4em;
   text-align:center;
-  background-color: red;
-  border: 3px black outset;
-  color: white;
+  background-color: black;
+  border: 3px yellow outset;
+  color: yellow;
   float: left;
   text-decoration: none;
   font-weight: bold;
@@ -30,9 +30,9 @@ div#applink a:hover {
   width: 10em;
   height: 1.4em;
   text-align:center;
-  background-color: blue;
+  background-color: yellow;
   border: 3px black inset;
-  color: white;
+  color: black;
   float: left;
   text-decoration: none;
   font-weight: bolder;
@@ -42,7 +42,7 @@ div#applink a:hover {
   height: 1.4em;
   text-align:center;
   background-color: black;
-  border: 3px red outset;
+  border: 3px yellow outset;
   color: yellow;
   float: left;
   text-decoration: none;
@@ -53,12 +53,12 @@ div#applink a:hover {
 }
 
 .missionlink a {
-  width: 20em;
-  height: 1.6em;
+  width: 33em;
+  height: 3.2em;
   text-align:center;
   background-color: black;
-  border: 3px red outset;
-  color: blue;
+  border: 3px yellow outset;
+  color: yellow;
   float: left;
   text-decoration: none;
   font-weight: bold;
@@ -76,7 +76,7 @@ table.level_nav  {
   height: 1.4em;
   text-align:center;
   background-color: yellow;
-  border: 3px red inset;
+  border: 3px black inset;
   color: black;
   float: left;
   text-decoration: none;
@@ -87,11 +87,11 @@ table.level_nav  {
 }
 
 .missionlink a:hover {
-  width: 20em;
-  height: 1.6em;
+  width: 33em;
+  height: 3.2em;
   text-align:center;
-  background-color: blue;
-  border: 3px red inset;
+  background-color: yellow;
+  border: 3px yellow inset;
   color: black;
   float: left;
   text-decoration: none;
@@ -102,19 +102,19 @@ table.level_nav  {
 }
 
 h1 {
-  color: maroon;
+  color: black;
   font-size: 150%;
   font-style: italic;
   display: block;
   width: 100%;
-  border-bottom: 1px solid DarkSlateGrey;
+  border-bottom: 1px solid black;
 }
 h1.title {
   margin: 0 0 1em;
-  padding: 0px;
-  background-color: blue;
-  color: white;
-  border-bottom: 4px solid red;
+  padding: 10px;
+  background-color: black;
+  color: yellow;
+  border-bottom: 4px solid yellow;
   font-size: 2em;
   font-style: normal;
 }
@@ -125,9 +125,9 @@ table#movies {
   border-bottom: 2px solid black;
 }
 table#movies th {
-  border: 2px solid white;
+  border: 2px solid black;
   font-weight: bold;
-  background-color: wheat;
+  background-color: yellow;
 }
 table#movies th, table#movies td {
   padding: 4px;
@@ -145,5 +145,5 @@ form label {
   display: block;
   line-height: 25px;
   font-weight: bold;
-  color: maroon;
+  color: black;
 }

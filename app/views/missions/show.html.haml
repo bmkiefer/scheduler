@@ -1,15 +1,13 @@
-%h2 Details about level #{@level.level_name} mission #{@mission.mission_name}
-
+%h1 #{@mission.mission_name}
 %ul#attributes
   %li
     Points:
     = @mission.points
   %li
     Description:
-    = @mission.description
+    = @mission.description.html_safe
   %li
     Mission:
-    = @mission.url
   -if(@transaction.complete_flag == "Complete" )
     %li
       Completed on:
@@ -18,6 +16,8 @@
   %td= button_to 'Submit Feedback', user_level_mission_submission_path(params[:user_id],params[:level_id], params[:id], @submission), :method => :get
 -else
   %td= button_to 'View Feedback', user_level_mission_submission_submission_response_path(params[:user_id],params[:level_id], params[:id], @submission, @submission_response.id ), :method => :get  
+
+    = @mission.url.html_safe
 
 %br
 %br
