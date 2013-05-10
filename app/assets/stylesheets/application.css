@@ -147,3 +147,42 @@ form label {
   font-weight: bold;
   color: black;
 }
+
+/*#divCenter{
+  position:absolute;
+  top:0%;
+  left:0;
+  right:0;
+  height:50px;
+  width:500px;
+  margin:0 auto;
+  border: 1px solid #aaaaff;
+  background:#aaaaff;
+  z-index:2;
+}
+#divLeft{
+  position:absolute;
+  top:0;
+  left:0%;
+  width:50%;
+  border: 1px solid #aaffaa;
+  z-index:1;
+}
+#divLeftInner{
+  height:60px;
+  margin-right:250px;
+  background:#aaffaa;
+}
+#divRight{
+  position:absolute;
+  top:0;
+  right:0%;
+  width:50%;
+  border: 1px solid #ffaaaa;
+  z-index:1;
+}
+#divRightInner{
+  height:60px;
+  margin-left:250px;
+  background:#ffaaaa;
+}*/

@@ -33,17 +33,26 @@ end
 
 level_t = [
 	    {:level_name => 'Level 1', :points => 0, :activity => 'Level 1 is designed for entry level teachers who need basic skills to begin work at Bettendorf High School. You will need a total of 10 Paw Points to advance to level 2, and coincidentally, there are only 10 missions that you can choose to complete. I know what you are saying, "I thought we were going to have some choice!" Rest assured Grasshopper, your time will come.<br><br>
-
-You need to make sure you fill out the form on the missions you complete. The form will have a couple of content questions about what you learned and the second form is a mission rating. Follow the directions in filling out and submitting the form.'},
+You need to make sure you fill out the form on the missions you complete. The form will have a couple of content questions about what you learned and the second form is a mission rating. Follow the directions in filling out and submitting the form.<br><br>
+<b><u>Missions at this level will award you 1 Paw Points</u></b><br><br>'},
 	    {:level_name => 'Level 2', :points => 0, :activity => 'Okay Noob, it is time to actually learn some things that you can use. The bad news is that this is not the level where you get your new fancy tablet so you can play angry birds during your off block. The good news is you will be learning some actual programs and in the end will lose your "noobie" status.<br><br>
-Some of the quests are chains, where completing one quest will allow you to move on to another. Fear not, you will be earning Paw Points as you go! In order to complete this level you need not complete all of the quests. You also need not do them in order (unless its a chain).  Each quest is worth 2 Paw Points'},
-            {:level_name => 'Level 3', :points => 0, :activity => 'Level Overall Description'},
-            {:level_name => 'Level 4', :points => 0, :activity => 'Level Overall Description'},
-	    {:level_name => 'Level 5', :points => 0, :activity => 'Level Overall Description'},
-            {:level_name => 'Level 6', :points => 0, :activity => 'Level Overall Description'},
-            {:level_name => 'Level 7', :points => 0, :activity => 'Level Overall Description'},
-	    {:level_name => 'Level 8', :points => 0, :activity => 'Level Overall Description'},
-            {:level_name => 'Level 9', :points => 0, :activity => 'Level Overall Description'}
+Some of the quests are chains, where completing one quest will allow you to move on to another. Fear not, you will be earning Paw Points as you go! In order to complete this level you need not complete all of the quests. You also need not do them in order (unless its a chain).<br><br>
+<b><u>Missions at this level will award you 2 Paw Points</u></b><br><br>'},
+            {:level_name => 'Level 3', :points => 0, :activity => 'Congrats Novice! This level offers very little choice. Here you are going to receive and set up your IPad. The first chain of missions will end with you getting your IPad. The second chain will introduce you to the features of the IPad as well as help you set up your WiFi, mail, and things like that.<br><br>
+<b><u>Missions at this level will award you 3 Paw Points</u></b><br><br>'},
+            {:level_name => 'Level 4', :points => 0, :activity => 'Gratz on getting that swanky new playground of processors and pixels! We are going to assume that you have your iPad set up with your email and accounts from last level. Now it is time to find out all the cool things you can do with it in your class. Not all of these missions will incorporate the iPad, but there will be enough of them to make you dangerous.<br><br>
+<b><u>Missions at this level will award you 4 Paw Points</u></b><br><br>'},
+	    {:level_name => 'Level 5', :points => 0, :activity => 'Gratz on losing the Novice title and becoming a User. By this time you are using some of the exciting capabilities of technology in our school. This level gives you the opportunity to work through some social media experiences as well as classroom management systems. This level will consist of many chains that will earn you more titles to go along with your mad skills! If you are still interested in lower level missions, feel free to farm some points from them to your hearts desire!<br><br>
+<b><u>Missions at this level will award you 5 Paw Points</u></b><br><br>'},
+            {:level_name => 'Level 6', :points => 0, :activity => 'Alright Tech Geeks, you scored yourself some earbuds so lets get some more swag. This level will put you into some of the more advanced features of many of the applications you have been learning to use. Chances are, you may know a lot of this. I know that once I am introduced to a program, I learn most of its use by exploration. Hopefully we can fine tune your skills and develop the true Tech Geek inside you that has been waiting to get out.<br><br>
+<b><u>Missions at this level will award you 6 Paw Points</u></b><br><br>'},
+            {:level_name => 'Level 7', :points => 0, :activity => 'This level will begin your work on the upper tier of the progression. I am assuming since you have finished Level 6 that you are comfortable finding apps on your own and reviewing them for recommendation to others. Tech Geeks love exploring the virtual environment and coming up with exciting and innovative ways of enhancing their classroom with technology. This level, you will begin sharing those ideas with others. There are not enough missions in this level to reach level 8 without repeating missions. From here on out, the missions will be geared towards enhancing your curriculum through integration, not just teaching yourself how to use swanky gadgets. Feel free to farm some lower missions for small Paw Points, or complete certain level 7 missions multiple times to earn points again and again.<br><br>
+<b><u>Missions at this level will award you 7 Paw Points</u></b><br><br>'},
+	    {:level_name => 'Level 8', :points => 0, :activity => 'You are almost there! You should now be working right alongside the creators of these missions as a partner in our enterprise. This level will have you creating missions for use by others as well as collaborating with your peers to better their curriculum. This is a school-wide effort and we are all about helping every kid, not just the ones in your classroom.<br><br>
+<b><u>Missions at this level will award you 8 Paw Points</u></b><br><br>'},
+            {:level_name => 'Level 9', :points => 0, :activity => 'All Praise the Tech God!!! Gratz on becoming what we all strive to become! You are really helping improve this school and your efforts should be applauded. May the bards sing of your greatness from the highest peaks.<br><br>
+This level will complete your training. This is not for the faint of heart however. The skills you will learn here will be far beyond what ordinary mortals possess. Prepare for Tech Awesomeness!<br><br>
+<b><u>Missions at this level will award you 9 Paw Points</u></b><br><br>'}
 	  ]
 
 mission1_t = [
@@ -58,8 +67,8 @@ If you are interested in more information about Gamification and how it can be a
 The Technology Department at BHS consists of many faces that you will run into from time to time. Here is a list of each of them with their responsibilities. If you are looking for help with a problem, there is a chain of command that you need to follow.<br><br>  
 All queries for tech problems are processed through emailing <b>HS COMPUTER PROBLEMS</b>. When you send a problem in, it is available for viewing by the entire tech department. If someone is absent on a given day, the problem will be picked up by their designated substitute.  If it is a true emergency such as:<br>
 I have 30 freshmen staring at me while I am frantically trying to figure out why my projector went black and I have absolutely no idea what I will do with them if I can not use my projector.  In this type of situation, try calling Eric (6062) or LeAnne (6060) to see if they are available to help at that point.<br><br>
-<h3>Eric McCoy</h3><br>
-<img src="/images/Eric McCoy.png"/><br><br>
+<h3>Eric McCoy</h3>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/_/rsrc/1332440539524/home/level-1/mission-1-2/Eric%20McCoy.jpg?height=200&width=150"/><br><br>
 Eric will be your first line of defense. Eric has been the high schools technician for just over 2 years.  He is responsible for supporting the High School, the Bus Garage, and the Thomas Edison Center.  His office will be located in the new Administration building (fall 2012).  Right now he is located across from the library conference room.  Eric is married (Rachel) and has two young children (Katie, Jack).<br><br>
 Eric handles:<br>
 Network connection issues<br>
@@ -76,7 +85,8 @@ Our printer is not working.<br>
 My promethean board is not responding.<br>
 I need to reset my Google password.<br>
 My document camera is not working.<br><br>
-<h3>LeAnne Wagner</h3><br> 
+<h3>LeAnne Wagner</h3>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/_/rsrc/1332258906276/home/level-1/mission-1-2/WAGNER_LEANNE.jpg?height=200&width=150"/><br><br> 
 LeAnne is the Teacher Librarian who is also responsible for helping staff integrate technology into their curriculum. She is here to help you in planning lessons and integrating technology.<br><br>  
 <b>Contact LeAnne for these types of things:</b><br>
 I want to use a specific tool, but I do not know how.<br>
@@ -88,9 +98,10 @@ Which app do I use?<br>
 Which database can I use for my lesson?<br><br>
 <h2>Student Tech Team</h2><br> 
 We will have a student tech team organized in the spring of 2012.  Eventually this student tech team will be a class offered with a curriculum attached but for right now, we are going to enlist the help of students as much as we can with the roll out next year.  Students will man the student tech help desk and will be able to assist other students with their iPads and other technical issues.<br><br>  
-<h3>Robert Ogan</h3><br>
+<h3>Robert Ogan</h3>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/_/rsrc/1331301425063/home/level-1/mission-1-2/robert.jpg?height=266&width=200", width="150", height="200"/><br><br>
 Robert has been in charge of the Network Administration for 6 years, he has been in the district technology department for 13 years.<br>
-If Eric determines that your computer issue needs to come to Roberts attention, he will contact Robert.  If it is a Moodle question, contact LeAnne first and she will contact Robert.  <b>Robert is handling all district network issues so we want to make sure that we try to handle issues within the building first.</b> ',:points => 1,:urllink_type => 'link',:url => ''},
+If Eric determines that your computer issue needs to come to Roberts attention, he will contact Robert.  If it is a Moodle question, contact LeAnne first and she will contact Robert.  <b>Robert is handling all district network issues so we want to make sure that we try to handle issues within the building first.</b><br><br> ',:points => 1,:urllink_type => 'link',:url => ''},
             {:mission_name => 'What makes a good password, what kinds of updates are needed, and how should I name files. (103)',:description => '<h2>Passwords & Plug-Ins & File Names Oh My!</h2><br>  
 Please read the following information on naming files.',:points => 1,:urllink_type => 'link',:url => '<br><a href="http://www.records.ncdcr.gov/erecords/filenaming_20080508_final.pdf" target="_blank">Best Practices for File Naming</a><br>
 <a href="https://security.tennessee.edu/pdfs/PBP.pdf" target="_blank">Passwords</a>'},
@@ -468,7 +479,33 @@ Those are all the steps! You have now installed the <a href="http://evernote.com
 To clip a portion of a page: Highlight a section of the page that you want to clip and then hit your Evernote bookmark.<br><br>
 To clip an entire page: Hit your Evernote bookmark.<br><br>
 Note: the first time the Evernote web clipper is used, it will ask you to log in.<br><br>
-<h3><b>Source:  Lorenzo Caum</b></h3><br><br>',:points => 4,:urllink_type => 'link',:url => ''}
+<h3><b>Source:  Lorenzo Caum</b></h3><br><br>',:points => 4,:urllink_type => 'link',:url => ''},
+            {:mission_name => 'KeepVid  (413)',:description => '<h3>Intro to Pirating Stuff Off the Internet</h3><br><br> 
+Grabbing stuff off the Internet for use in the classroom is a valuable time-saver for you. This tutorial will teach you how to download a video from the net for your own use. Note that there are Copyright issues with doing this, so it may not be a bad idea to link to the video or embed it instead of take it. Sometimes taking it is easier though....;)<br><br>
+<a href="http://youtube.com/watch?v=OVa3tWs4Ir8" target="_blank">http://youtube.com/watch?v=OVa3tWs4Ir8</a><br><br><iframe width="560" height="315" src="https://www.youtube.com/embed/OVa3tWs4Ir8?feature=player_embedded" frameborder="0" allowfullscreen></iframe><br><br>',:points => 4,:urllink_type => 'link',:url => ''},
+            {:mission_name => 'Introduction to Animoto (414)',:description => 'Animoto for Education<br><br>
+<a href="http://youtube.com/watch?v=OVa3tWs4Ir8" target="_blank">http://youtube.com/watch?v=OVa3tWs4Ir8</a><br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rPh1uctZBN4?feature=player_embedded" frameborder="0" allowfullscreen></iframe><br><br>',:points => 4,:urllink_type => 'link',:url => ''},
+            {:mission_name => 'Screencast-o-matic (415)',:description => '<h3>How Do You Guys Make These Cool Tutorials?<h3><br><br>
+Well, the answer to that is very simple. It does not involve magic powder, or sacrificing a goat or anything, it involves a website called Screencast-o-matic. I will tell you that this tutorial was probably the hardest one to make because I could not capture the screencast of the screencast software. Instead, I took some pics of my screen and am going to lead you through it. It really is VERY simple.<br><br>
+<u>Step 1. Go to Screencast-o-matic.com.</u> Feel free to Google this term and it will get you there. The website looks like this:<br>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/home/level-4/mission4-15/mission4.15A.jpg?attredirects=0"/><br><br>
+Note the two buttons that say, "Start Recording."  It is as easy as pressing those. This program does not need to install on your computer. It runs a Java script in the background, similar to your clipboard. It just saves the movie.<br><br>
+<u>Step 2: Defining your window:</u>  Once you click there, it will run this script and place a dotted box around your screen with some controls at the bottom. It will look like this:<br>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/home/level-4/mission4-15/mission4.15B.jpg?attredirects=0"/><br><br> 
+Note that everything on your screen is still there in the background, but you now have the ability to refit this box to cover whatever part of your screen you want to capture.<br>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/home/level-4/mission4-15/mission4.15C.jpg?attredirects=0"/><br><br> 
+At the bottom, there are some tools. First and foremost, I would check your microphone. If you begin talking, a green signal bar will appear after the microphone icon. This will tell you that you mic is working.<br><br>
+<u>Step 3: Record your video.</u> When you are ready to begin recording, simply press the red record button and you are set. It will count down from 3 and tell you that you need to press ALT-P to pause the recording.<br><br>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/_/rsrc/1333635336619/home/level-4/mission4-15/mission4.15D.jpg"/><br><br>
+<u>Step 4: Stop recording and save your movie:</u> Once your video is done, hit ALT-P to pause the video and then the Done button to stop the recording. It will bring you to the following screen:<br>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/home/level-4/mission4-15/mission4.15E.jpg?attredirects=0"/><br><br>
+You can choose to publish your video to screencast-o-matic, youtube, or on your own hard drive. For these tutorials, I have saved the videos to my machine locally and then uploaded them to Youtube. This gives me a copy of them in case I ever need to re-upload them or whatever. Besides, I like my stuff where I can handle it. The options for saving the file locally are below. I have done these in HD, MP4, which is a Quicktime file that plays most everywhere and uploads to Youtube easily.<br><br>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/home/level-4/mission4-15/mission4.15F.jpg?attredirects=0"/><br><br> 
+<u>Step 5:</u> Let it render and you are done. Once you hit the save video button it will ask you where you want to save it. Choose a place and hit go. It will take some time to render (a 15 min movie took me 3 min or so to render which is not bad)<br><br>
+<img src="https://sites.google.com/a/bettendorf.k12.ia.us/bhs-tech-pd/home/level-4/mission4-15/mission4.15G.jpg?attredirects=0"/><br><br>
+When it is done, the movie will be on your machine or wherever you saved it. It is that easy.<br><br>
+I trust you all will get good at this so you can help me out on future missions. Good luck!<br><br>',:points => 4,:urllink_type => 'link',:url => ''}
 	    ]
 
 mission5_t = [
