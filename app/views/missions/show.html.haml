@@ -1,13 +1,12 @@
 %h1 #{@mission.mission_name}
-%ul#attributes
-  %li
+#attributes
+  %p
     Points:
     = @mission.points
-  %li
+  %p
     Description:
     = @mission.description.html_safe
-  %li
-    Mission:
+  %p
   -if(@transaction.complete_flag == "Complete" )
     %li
       Completed on:
@@ -17,8 +16,11 @@
 -else
   %td= button_to 'View Feedback', user_level_mission_submission_submission_response_path(params[:user_id],params[:level_id], params[:id], @submission, @submission_response.id ), :method => :get  
 
-    = @mission.url.html_safe
+  = @mission.url.html_safe
 
 %br
 %br
 = link_to 'Back To Mission Select', user_level_path(params[:user_id],params[:level_id])
+%br
+%br
+%hr

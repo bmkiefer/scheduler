@@ -40,15 +40,15 @@
         %br
 
       - if signed_in?
-        #applink= link_to "Sign-Out", signout_path, :method => :delete, :id => "Sign-Out"
-        #applink= link_to "Profile", user_path(current_user), :method => :get, :id => "Profile"
-        #applink= link_to "Home", home_path, :method => :get
-        #userinfo
+        #applink.childDiv2= link_to "Sign-Out", signout_path, :method => :delete, :id => "Sign-Out"
+        #applink.childDiv2= link_to "Profile", user_path(current_user), :method => :get, :id => "Profile"
+        #applink.childDiv2= link_to "Home", home_path, :method => :get
+        #userinfo.childDiv2
           Current User: 
           = current_user.username
       - else
-        #applink= link_to "Sign-In", signin_path, :method => :get, :id => "Sign-In"
-        #applink= link_to "Sign-Up", signup_path, :method => :get, :id => "Sign-Up"
+        #applink.childDiv2= link_to "Sign-In", signin_path, :method => :get, :id => "Sign-In"
+        #applink.childDiv2= link_to "Sign-Up", signup_path, :method => :get, :id => "Sign-Up"
       
       %br
       %br

@@ -22,7 +22,7 @@
           overflow: hidden
         #colmid
           float: left
-          width: 200%
+          width: 175%
           position: relative
           left: ($left_col_width + $padding + $padding)
         #colright
@@ -54,9 +54,9 @@
           width: $right_col_width
           position: relative
           left: 15px
-          overflow: hidden
 
   #header
+    %hr
     #colmask.three-column
       #colmid
         #colright
@@ -83,13 +83,15 @@
                     = @user.role
                     %br
                     %br
+                    
                     = link_to 'Change password', password_edit_path(:id => @user.id)
+                    
                     %br/
                     %br/
                     %br/
                     %span.profilelink= link_to 'Edit My Profile', edit_user_profile_path(@user)
                     %br/
-                    %span.profilelink= link_to 'View All Feedback Submissions', user_profile_path(@user), :method => :get
+                    %span.profilelink= link_to 'View All Feedback Submissions', user_profile_path(@user), :method => :get 
           #col2
             %table.level_nav
               %thead
@@ -104,9 +106,11 @@
                       %td.levellink= link_to "#{level_obj.level_name} Completed", user_level_path(@user,level_obj)
             %br	
           #col3
-            %table#users
+            #table
+            %table{:border => 1, :width => "150%", :align => "center", :bgcolor => "black", :color => "yellow" }
+              #users
               %thead 
-                LEADERBOARD
+                <font color="yellow", style="BACKGROUND-COLOR: black" >LEADERBOARD</font>
                 %tr
                   %th Rank
                   %th User
@@ -129,5 +133,6 @@
         #{@level.level_name}: #{@mission.mission_name} on #{sub.created_at.strftime("%b. %d %Y at %H:%M") }
         %br
       %br
+      %hr
                     
       #footer
