@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find_by_user_id(id)
     @all_profiles = Profile.all
     @role = @user.role
+
     # will render app/views/movies/show.<extension> by default
   end
 

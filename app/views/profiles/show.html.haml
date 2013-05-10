@@ -1,4 +1,4 @@
-%h2 All Submission Feedback for #{@user.username}
+%h2 All Submissions for #{@user.username}
 -if (@role == "admin")
   -@users.each do |user|
     %h4 #{user.username}:
@@ -15,5 +15,6 @@
     - @submission = Submission.find(sub.submission_id)
     - @mission = Mission.find(@submission.mission_id)
     - @level = Level.find(@submission.level_id)
+    Completed: #{sub.created_at.strftime( "%b. %d  %Y")}
     = button_to "Level: #{@level.level_name} Mission: #{@mission.mission_name}", user_level_mission_submission_submission_response_path(params[:id], @submission.level_id, @submission.mission_id, @submission, sub.id ), :method => :get
-  %br    
+    %br   

@@ -11,7 +11,17 @@ class UsersController < ApplicationController
     @levels_all = Level.order("level_name ASC")
     @transactions = Transactionlevel.where(:user_id => @user.id)
     @profile = Profile.find_by_user_id(id)
-    # will render app/views/movies/show.<extension> by default
+
+    @subs = SubmissionResponse.order("created_at DESC")
+    @subs_responses = @subs.where(:user_id => @user.id)
+    @my_submissions = []
+    i = 0
+    @subs_responses.each do |sub|
+      if ((sub.user_id == @user.id) && (i < 5))
+         @my_submissions.push(sub)
+	 i=i+1
+      end
+    end
   end
 
   def index
