@@ -1,4 +1,4 @@
-%h2 Details about mission #{@mission.mission_name}
+%h2 Details about level #{@level.level_name} mission #{@mission.mission_name}
 
 %ul#attributes
   %li
@@ -10,6 +10,10 @@
   %li
     Mission:
     = @mission.url
+  -if(@transaction.complete_flag == "Complete" )
+    %li
+      Completed on:
+      = @submission_response.created_at
 -if (@transaction.complete_flag == "Not Complete")
   %td= button_to 'Submit Feedback', user_level_mission_submission_path(params[:user_id],params[:level_id], params[:id], @submission), :method => :get
 -else

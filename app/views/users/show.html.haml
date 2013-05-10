@@ -65,7 +65,6 @@
               #col1
                 
                 %h2 Details about user #{@user.username}
-
                 %ul#attributes
                   %li
                     Email:
@@ -102,7 +101,8 @@
                     -if (@transactions.find_by_level_id(level_obj.id).complete_flag == "Not Complete")
                       %td.levellink= link_to "#{level_obj.level_name} ", user_level_path(@user,level_obj)
                     -else
-                      %td.levellink= link_to "#{level_obj.level_name} Completed", user_level_path(@user,level_obj)	
+                      %td.levellink= link_to "#{level_obj.level_name} Completed", user_level_path(@user,level_obj)
+            %br	
           #col3
             %table#users
               %thead 
@@ -120,5 +120,14 @@
                     %td= i
                     %td= user.username
                     %td= @profile.total_score
+
+      %h4 My Recent Completed Activities
+      - @my_submissions.each do |sub|
+        - @submission = Submission.find(sub.submission_id)
+        - @mission = Mission.find(@submission.mission_id)
+        - @level = Level.find(@submission.level_id)
+        #{@level.level_name}: #{@mission.mission_name} on #{sub.created_at.strftime("%b. %d %Y at %H:%M") }
+        %br
+      %br
                     
       #footer
