@@ -3,7 +3,7 @@ class CreateLevels < ActiveRecord::Migration
     create_table :levels do |t|
       t.string :level_name
       t.integer :points
-      t.string :activity
+      t.text :activity
     end
   end
 
