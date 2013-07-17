@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title BHS TECH PD
+    %title Principal Sport Reservations
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -21,35 +21,15 @@
 
 
   %head
-    %h1.title BHS TECH PD
+    %h1.title Principal Sport Reservations
     #main
-      - if flash[:notice] && flash[:level_complete]
-        #notice.level_complete= flash[:level_complete]
-        #notice.message= flash[:notice]
-      - elsif flash[:notice]
-        #notice.message= flash[:notice]
-        %br
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
-        %br
-      - elsif flash[:error]
-        #error.message= flash[:error]
-        %br
-      - else
-        %br
-        %br
-
       - if signed_in?
         #applink.childDiv2= link_to "Sign-Out", signout_path, :method => :delete, :id => "Sign-Out"
-        #applink.childDiv2= link_to "Profile", user_path(current_user), :method => :get, :id => "Profile"
+        #applink.childDiv2= link_to "Legal", user_path(current_user), :method => :get, :id => "Profile"
         #applink.childDiv2= link_to "Home", home_path, :method => :get
         #userinfo.childDiv2
-          Current User: 
-          = current_user.username
-      - else
-        #applink.childDiv2= link_to "Sign-In", signin_path, :method => :get, :id => "Sign-In"
-        #applink.childDiv2= link_to "Sign-Up", signup_path, :method => :get, :id => "Sign-Up"
-      
+        Current User: 
+        = current_user.username      
       %br
       %br
       
