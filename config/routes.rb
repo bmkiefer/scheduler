@@ -1,15 +1,11 @@
 Rottenpotatoes::Application.routes.draw do
 
   resources :users do
-    resources :profiles
-    resources :levels do
-      resources :transactionlevels
-      resources :missions do
-	resources :submissions do
-	resources :submission_responses, only: [:create, :show]
-	end        
-	resources :transactionmissions
-      end
+    resources :requests
+    resources :reservations
+    resources :venues do
+      resources :games
+      resources :requests
     end
   end
 

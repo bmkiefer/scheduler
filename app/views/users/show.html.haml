@@ -1,83 +1,21 @@
 -# in app/views/movies/show.html.haml
 
-  #header
-    %hr
-    #colmask.three-column
-      #colmid
-        #colright
-          #col1wrap
-            #col1pad
-              #col1
-                
-                %h1 Details about user #{@user.username}
-                %ul#attributes
-                  %li
-                    Email:
-                    = @user.email
-                  %li
-                    First Name:
-                    = @profile.first_name
-                  %li
-                    Last Name:
-                    = @profile.last_name
-                  %li
-                    Total Score:
-                    = @profile.total_score
-                  %li
-                    Role:
-                    = @user.role
-                    %br
-                    %br
-                    
-                    = link_to 'Change password', password_edit_path(:id => @user.id)
-                    
-                    %br/
-                    %br/
-                    %br/
-                    %span.profilelink= link_to 'Edit My Profile', edit_user_profile_path(@user)
-                    %br/
-                    %span.profilelink= link_to 'View All Feedback Submissions', user_profile_path(@user), :method => :get 
-          #col2
-            %table.level_nav
-              %thead
-                %tr
-                  %th LEVEL SELECT
-              %tbody
-                - @levels_all.each do |level_obj|
-                  %tr
-                    -if (@transactions.find_by_level_id(level_obj.id).complete_flag == "Not Complete")
-                      %td.levellink= link_to "#{level_obj.level_name} ", user_level_path(@user,level_obj)
-                    -else
-                      %td.levellink= link_to "#{level_obj.level_name} Completed", user_level_path(@user,level_obj)
-            %br	
-          #col3
-            #table
-            %table{:border => 1, :width => "150%", :align => "center", :bgcolor => "black", :color => "yellow" }
-              #users
-              %thead 
-                <font color="yellow", style="BACKGROUND-COLOR: black" >LEADERBOARD</font>
-                %tr
-                  %th Rank
-                  %th User
-                  %th Score
-              %tbody
-                - i = 0
-                - @users_all.each do |user|
-                  - @profile = @profilescore_all.find_by_user_id(user.id)
-                  - i += 1
-                  %tr
-                    %td= i
-                    %td= user.username
-                    %td= @profile.total_score
-
-      %h4 My Recent Completed Activities
-      - @my_submissions.each do |sub|
-        - @submission = Submission.find(sub.submission_id)
-        - @mission = Mission.find(@submission.mission_id)
-        - @level = Level.find(@submission.level_id)
-        #{@level.level_name}: #{@mission.mission_name} on #{sub.created_at.strftime("%b. %d %Y at %H:%M") }
-        %br
-      %br
-      %hr
-                    
-      #footer
+-if @user.role != "admin"
+  %h1 Menu
+  = link_to "Locations", user_venues_path(@user)
+  %br
+  = link_to "Notifications", user_requests_path(@user)
+  %br
+  = link_to "Reservations", user_reservations_path(@user)
+-else
+  %h1 Notifications
+  %br
+  %h2 Pending Requests
+  %br
+  %h2 User Cancel Requests
+  %br
+  %h2 Declined Requests
+  %br
+  %h2 Approved Pending Requests
+  %br
+ 
