@@ -41,7 +41,7 @@
       - if signed_in?
         #applink.childDiv2= link_to "Sign-Out", signout_path, :method => :delete, :id => "Sign-Out"
         #applink.childDiv2= link_to "Legal", user_path(current_user), :method => :get, :id => "Profile"
-        #applink.childDiv2= link_to "Home", home_path, :method => :get
+        #applink.childDiv2= link_to "Home", signin_path, :method => :get
         #applink.childDiv2= link_to_function "Back", "history.back()"
         %br
         #userinfo.childDiv2

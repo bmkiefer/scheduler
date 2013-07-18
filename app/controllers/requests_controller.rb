@@ -24,7 +24,7 @@ class RequestsController < ApplicationController
       @user = User.find(params[:user_id])
       @venue = Venue.find(params[:venue_id])
       @request_array = params[:request]
-      @reqyest_array[:venue_id] = params[:venue_id]
+      @request_array[:venue_id] = params[:venue_id]
       @request_array[:user_id] = @user.id
       @request_array[:status] = 'pending'
       Request.create!(@request_array)
@@ -34,7 +34,7 @@ class RequestsController < ApplicationController
       @request_array = params[:request]
       @request_array[:user_id] = @user.id
       @request_array[:desired_date] = nil
-      @reqyest_array[:venue_id] = params[:venue_id]
+      @request_array[:venue_id] = params[:venue_id]
       @request_array[:any_flag] = 'true'
       @request_array[:status] = 'pending'
       Request.create!(@request_array)
