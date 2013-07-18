@@ -4,6 +4,7 @@ class CreateRequests < ActiveRecord::Migration
       t.string :status
       t.references :user
       t.references :reservation
+      t.references :venue
       t.string :phone_number
       t.datetime :desired_date
       t.string :any_flag

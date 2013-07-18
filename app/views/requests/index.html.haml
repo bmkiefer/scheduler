@@ -1,6 +1,18 @@
 -# in app/views/movies/show.html.haml
-- @my_requests.each do |request|
-  Status
-  = request.status
+%table
+  %thead 
+    %tr
+      %th Venue
+      %th Status
+      %th Request
+  %tbody
+    - @my_requests.each do |request|
+      - @venue = Venue.find(request.venue_id)
+      %tr
+        %td
+          = @venue.location
+          , 
+          = @venue.room
+        %td= request.status
   %br
  
