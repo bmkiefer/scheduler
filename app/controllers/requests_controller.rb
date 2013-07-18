@@ -20,11 +20,23 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @venue = Venue.find(params[:venue_id])
-    @request_array = params[:request]
-    @request_array[:user_id] = @user.id
-    Request.create!(@request_array)
+    if params[:desired_date] != "Any"
+      @user = User.find(params[:user_id])
+      @venue = Venue.find(params[:venue_id])
+      @request_array = params[:request]
+      @request_array[:user_id] = @user.id
+      @request_array[:status] = 'pending'
+      Request.create!(@request_array)
+    else
+      @user = User.find(params[:user_id])
+      @venue = Venue.find(params[:venue_id])
+      @request_array = params[:request]
+      @request_array[:user_id] = @user.id
+      @request_array[:desired_date] = nil
+      @request_array[:any_flag] = 'true'
+      @request_array[:status] = 'pending'
+      Request.create!(@request_array)
+    end
     redirect_to user_venue_path(@user,@venue)
   end
 
