@@ -1,0 +1,28 @@
+-#  This file is app/views/movies/index.html.haml
+
+%h1
+  Schedule for 
+  = @venue.location
+  , 
+  = @venue.room
+
+%table
+  %thead 
+    %tr
+      %th Game
+      %th Status
+  %tbody
+    - 
+    - @reservations.each do |res|
+      - @game = Game.find(res.game_id)
+      %tr
+        %td
+          = @game.game_time
+          , 
+          = @game.team
+          vs. 
+          = @game.opposing_team
+        %td= res.status
+
+
+

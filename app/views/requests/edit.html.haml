@@ -1,0 +1,52 @@
+-if @request.any_flag == 'true'
+  = form_tag user_request_path(@user,@request),:method => :put do
+
+    = label :request, :phone_number, 'Phone Number'
+    = text_field :request, 'phone_number',:readonly => true , :value => @request.phone_number
+
+    = label :request, :desired_date, 'Desired Date'
+    = select :request, :desired_date, @possible_dates
+
+    = label :request, :purpose, 'Purpose'
+    = text_field :request, 'purpose', :readonly => true , :value => @request.purpose
+
+    = label :request, :business_client, 'Client Name'
+    = text_field :request, 'business_client', :readonly => true , :value => @request.business_client
+
+    = label :request, :extra_tickets, 'Extra Tickets Needed'
+    = text_field :request, 'extra_tickets', :readonly => true , :value => @request.extra_tickets
+
+    = label :answer, :choice, 'Accept or Decline Response'
+    = select :answer, :choice, ['Accept','Decline']
+    %br
+    %br
+    = submit_tag 'Submit Reservation Request'
+    %br
+    %br
+    %hr
+-else
+  = form_tag user_request_path(@user,@request),:method => :put do
+
+    = label :request, :phone_number, 'Phone Number'
+    = text_field :request, 'phone_number',:readonly => true , :value => @request.phone_number
+
+    = label :request, :date, 'Date'
+    = text_field :request, 'request',:readonly => true , :value => @request.desired_date 
+
+    = label :request, :purpose, 'Purpose'
+    = text_field :request, 'purpose', :readonly => true , :value => @request.purpose 
+
+    = label :request, :business_client, 'Client Name'
+    = text_field :request, 'business_client',:readonly => true , :value => @request.business_client
+
+    = label :request, :extra_tickets, 'Extra Tickets Needed'
+    = text_field :request, 'extra_tickets',:readonly => true , :value => @request.extra_tickets
+
+    = label :answer, :choice, 'Accept or Decline Response'
+    = select :answer, :choice, ['Accept','Decline']
+    %br
+    %br
+    = submit_tag 'Submit Reservation Request'
+    %br
+    %br
+    %hr

@@ -1,0 +1,7 @@
+-#  This file is app/views/movies/index.html.haml
+
+%h1 Venues
+
+- @venues.each do |venue|
+  = link_to "#{venue.location}, #{venue.room}", user_venue_path(@user,venue)
+  %br

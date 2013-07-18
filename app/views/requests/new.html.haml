@@ -1,0 +1,34 @@
+%h1 
+  Submit Request for
+  = @venue.location
+  , 
+  = @venue.room
+
+You will given 
+= @venue.tickets 
+tickets with the reservation. There is 
+= @venue.extra_max
+extra tickets available for purchase.
+
+= form_tag user_venue_requests_path(params[:user_id],params[:venue_id]) do
+
+  = label :request, :phone_number, 'Phone Number'
+  = text_field :request, 'phone_number'
+
+  = label :request, :desired_date, 'Desired Date'
+  = select :request, :desired_date, @possible_dates
+
+  = label :request, :purpose, 'Purpose'
+  = select :request, :purpose, ['Business Client','Department Outing']
+
+  = label :request, :business_client, 'If Business Outting - Client Name'
+  = text_field :request, 'business_client'
+
+  = label :request, :extra_tickets, 'Extra Tickets Needed'
+  = text_field :request, 'extra_tickets'
+  %br
+  %br
+  = submit_tag 'Submit Reservation Request'
+  %br
+  %br
+  %hr
