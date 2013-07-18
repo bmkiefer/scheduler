@@ -4,18 +4,22 @@
   %h1 Menu
   = link_to "Locations", user_venues_path(@user)
   %br
-  = link_to "Notifications", user_requests_path(@user)
+  = link_to "My Notifications", user_requests_path(@user)
   %br
-  = link_to "Reservations", user_reservations_path(@user)
+  = link_to "My Reservations", user_reservations_path(@user)
 -else
   %h1 Notifications
   %br
   %h2 Pending Requests
+  - @pending.each do |pending|
   %br
   %h2 User Cancel Requests
+  - @canceled.each do |canceled|
   %br
   %h2 Declined Requests
+  - @declined.each do |declined|
   %br
   %h2 Approved Pending Requests
+  - @approved.each do |approved|
   %br
  

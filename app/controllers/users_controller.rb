@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    #edit to be desc
     @accepted = Request.where(:status => 'accepted')
     @declined = Request.where(:status => 'declined')
     @canceled = Request.where(:status => 'canceled')
