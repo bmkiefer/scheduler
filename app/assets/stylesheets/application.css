@@ -26,7 +26,7 @@ div#applink a {
   background-color: blue;
   border: 3px orange outset;
   color: white;
-  float: left;
+  float: center;
   text-decoration: none;
   font-weight: bold;
 }
