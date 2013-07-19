@@ -14,6 +14,7 @@
       %tr
         %th Request
         %th Requester
+        %th Submitting Time
         %th Respond
     %tbody
       - @pending.each do |request|
@@ -21,6 +22,7 @@
         %tr
           %td= link_to "View", user_request_path(params[:id],request)
           %td= @user.username
+          %td= request.updated_at
           %td= link_to "Respond", edit_user_request_path(params[:id],request)
   %br
   %table 

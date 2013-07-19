@@ -24,14 +24,14 @@
     %br
     %br
     %hr
--else
+- else
   = form_tag user_request_path(@user,@request),:method => :put do
 
     = label :request, :phone_number, 'Phone Number'
     = text_field :request, 'phone_number',:readonly => true , :value => @request.phone_number
 
-    = label :request, :date, 'Date'
-    = text_field :request, 'request',:readonly => true , :value => @request.desired_date 
+    = label :request, :desired_date, 'Date'
+    = text_field :request, 'desired_date',:readonly => true , :value => @request.desired_date 
 
     = label :request, :purpose, 'Purpose'
     = text_field :request, 'purpose', :readonly => true , :value => @request.purpose 
