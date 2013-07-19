@@ -1,4 +1,5 @@
 -# in app/views/movies/show.html.haml
+
 %table
   %thead 
     %tr
@@ -14,5 +15,6 @@
           , 
           = @venue.room
         %td= request.status
+        %td= link_to "View", user_request_path(params[:user_id],request)
   %br
  
