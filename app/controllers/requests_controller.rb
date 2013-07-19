@@ -68,7 +68,7 @@ class RequestsController < ApplicationController
          @reservation.status = "Dept"
       end
 
-      @request.reservation_id = @reservation.id
+      @request_array[:reservation_id] = @reservation.id
 
       @reservation.update_attributes!(@reservation.attributes)
       @request.update_attributes!(@request_array)
