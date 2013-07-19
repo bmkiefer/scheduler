@@ -20,9 +20,9 @@ div#main {
 }
 div#applink a {
   
-  padding:5px 10px;
-  min-width: fill-available;
-  min-height: 20em;
+  padding:0em 0 0em 0;
+  width: 20em;
+  height: 20em;
   text-align:center;
   font-size:22pt;
   background-color: blue;
