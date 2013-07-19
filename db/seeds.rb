@@ -11,7 +11,7 @@ user_t = [
           {:username => '00000002', :email => 'jmk@uiowa.edu', :password => 'password1',:password_confirmation => 'password1', :role => 'user', :position => 'Business Analyst', :department => 'RIS', :leader=> 'd45556'},
           {:username => '00000003', :email => 'james@hotmail.com', :password => 'password2',:password_confirmation => 'password2', :role => 'user', :position => 'Business Anaylst', :department => 'USIS', :leader=> 'y948706'},
           {:username => '00000004', :email => 'krogers@live.com', :password => 'password3',:password_confirmation => 'password3', :role => 'user', :position => 'Lead Application Analyst', :department => 'Life', :leader=> 't904446'},
-          {:username => 'admin', :email => 'tina@gmail.com', :password => 'admin',:password_confirmation => 'admin', :role => 'admin', :position => 'admin', :department => 'admin', :leader=> 'admin'}
+          {:username => 'admin', :email => 'tina@gmail.com', :password => 'admin12',:password_confirmation => 'admin12', :role => 'admin', :position => 'admin', :department => 'admin', :leader=> 'admin'}
           ]
 
 venue_t = [
