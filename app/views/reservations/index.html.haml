@@ -8,13 +8,12 @@
     %tr
       %th Venue
       %th Date
-      %th View Request
       %th Cancellation
   %tbody
     - @reservations.each do |res|
       - @game = Game.find(res.game_id)
       - @venue = Venue.find(res.venue_id)
-      - @request = Request.find_by_user_id_and_reservation_id(@user.id,res.id)
+      - @request = Request.find_by_user_id_and_reservation_id(params[:user_id],res.id)
       %tr
         %td
           = @venue.location
@@ -22,7 +21,6 @@
           = @venue.room
         %td
           = @game.game_time
-        -#%td= link_to "View Request",user_request_path(@user,@request)
         %td= link_to "Cancel" ,user_reservation_path(@user,res), :method => :put
 
 

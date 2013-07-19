@@ -24,17 +24,14 @@ class ReservationsController < ApplicationController
   def update
      @user = User.find params[:user_id]
     @reservation = Reservation.find(params[:id])
-    @request = Request.find_by_user_id_and_reservation_id(params[:user_id],params[:id])
+    @request = Request.find_by_user_id_and_reservation_id(@user.id,@reservation.id)
 
-    @new_request = @request
-    @new_reservation = @reservation
-
-    @new_request.status = "canceled"
-    @new_reservation.user_id = nil
-    @new_reservation.status = "Open"
+    @request.status = "canceled"
+     @reservation.user_id = nil
+     @reservation.status = "Open"
     
-    @request.update_attributes!(@new_request.attributes)
-    @reservation.update_attributes!(@new_reservation.attributes)  
+    @request.update_attributes!(@request.attributes)
+     @reservation.update_attributes!( @reservation.attributes)  
 
     redirect_to user_reservations_path(@user)
   end

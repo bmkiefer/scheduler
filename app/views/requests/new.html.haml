@@ -18,6 +18,9 @@ extra tickets available for purchase.
   = label :request, :desired_date, 'Desired Date'
   = select :request, :desired_date, @possible_dates
 
+  = label :request, :any_flag, 'Any Date if Desired Not Available?'
+  = select :request, :any_flag, ['true','false']
+
   = label :request, :purpose, 'Purpose'
   = select :request, :purpose, ['Business Client','Department Outing']
 
