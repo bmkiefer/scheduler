@@ -1,4 +1,7 @@
-%h2 Details about request submitted by #{@user_submit.username}
+- if !(@user_routed.username == @user.username)
+  %h2 Details about request submitted by #{@user.username}
+- else
+  %h2 Details
 
 %ul#details
   %li

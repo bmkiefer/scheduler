@@ -90,6 +90,9 @@ td{
 }
 
 a {
-  color: white;
-  text-decoration: none;
+  color: orange;
+}
+
+li {
+  font-size:16pt;
 }

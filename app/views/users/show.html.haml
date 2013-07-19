@@ -8,7 +8,8 @@
   %br
   #applink.childDiv2= link_to "My Reservations", user_reservations_path(@user)
 -else
-  %table Pending Requests
+  %table 
+    Pending Requests
     %thead 
       %tr
         %th Request
@@ -18,11 +19,12 @@
       - @pending.each do |request|
         - @user = User.find(request.user_id)
         %tr
-          %td= link_to "View", user_request_path(@user,request)
-          %td= request.status
-          %td= link_to "Respond" edit_user_request_path(params[:id],request)
+          %td= link_to "View", user_request_path(params[:id],request)
+          %td= @user.username
+          %td= link_to "Respond", edit_user_request_path(params[:id],request)
   %br
-  %table Accepted Requests
+  %table 
+    Accepted Requests
     %thead 
       %tr
         %th Request
@@ -32,11 +34,12 @@
       - @accepted.each do |request|
         - @user = User.find(request.user_id)
         %tr
-          %td= link_to "View", user_request_path(@user,request)
+          %td= link_to "View", user_request_path(params[:id],request)
           %td= @user.username
           %td= request.status
   %br
-  %table Declined Requests
+  %table 
+    Declined Requests
     %thead 
       %tr
         %th Request
@@ -46,11 +49,12 @@
       - @declined.each do |request|
         - @user = User.find(request.user_id)
         %tr
-          %td= link_to "View", user_request_path(@user,request)
+          %td= link_to "View", user_request_path(params[:id],request)
           %td= @user.username
           %td= request.status
   %br
-  %table Cancellation Requests
+  %table 
+    Cancellation Requests
     %thead 
       %tr
         %th Request
@@ -60,7 +64,7 @@
       - @canceled.each do |request|
         - @user = User.find(request.user_id)
         %tr
-          %td= link_to "View", user_request_path(@user,request)
+          %td= link_to "View", user_request_path(params[:id],request)
           %td= @user.username
           %td= request.status
   %br
