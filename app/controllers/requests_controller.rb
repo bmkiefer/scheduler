@@ -57,7 +57,15 @@ class RequestsController < ApplicationController
       @request_array[:user_id] = @user.id
       @request_array[:any_flag] = @request.any_flag
       @request_array[:status] = 'accepted'
-      @my_game = Game.find_by_game_time(@request.desired_date)
+      if @request.venue_id == 2 || @request.venue_id == 3
+        @my_game = Game.find_by_game_time_and_team(@request.desired_date,'Iowa Cubs')
+      else
+        @my_game = Game.find_by_game_time_and_team(@request.desired_date,'Iowa Barn Stormers')
+        if @my_game == nil
+          @my_game = Game.find_by_game_time_and_team(@request.desired_date,'Iowa Energy')
+        end
+
+      end
       
       @reservation = Reservation.find_by_game_id_and_venue_id(@my_game.id,@request.venue_id)
 
